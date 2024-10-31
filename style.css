@@ -4,10 +4,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
+  transition: 0.2s;
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #dbdbdb;
   background-image: url(/ui/grain.png);
   min-height: 120vh;
   position: relative;
@@ -21,7 +22,18 @@ button {
   border-radius: 5px;
 }
 
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+body:has(.menu_active) nav {
+  opacity: 0.3;
+}
+
 nav {
+  transition-delay: 0.3s;
+  transition: 0.5s;
   width: calc(100% - 1rem);
   padding: 0.2rem;
   display: flex;
@@ -54,7 +66,7 @@ nav > #menu_button > span {
   width: 100%;
   height: 3px;
   border-radius: 1px;
-  background-color: #f5f5f5;
+  background-color: #dbdbdb;
 }
 nav > #menu_button > span:nth-last-child(1) {
   width: 70%;
@@ -66,12 +78,77 @@ nav > #nav_right {
   display: none;
 }
 
+menu {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  transition: 0.5s;
+  padding: 0.7rem;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  color: #f7f7f7;
+}
+menu > #menu_header {
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 0.5rem;
+}
+menu > #menu_header > div > h1 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+menu > #menu_header > div > span {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+menu > #menu_header > button {
+  height: 90%;
+  aspect-ratio: 1/1;
+  font-size: 1.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+menu > #menu_links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+menu > #menu_links > a {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+menu.menu_active {
+  transition: 0.7s;
+  left: 0%;
+}
+
 main {
   width: calc(100% - 1rem);
   position: relative;
   left: 0.5rem;
   margin-top: 2rem;
   padding: 0.2rem;
+  background-color: #8f8f8f;
+  transition: 0.6s;
+}
+main.main_disabled {
+  transition: 0.5s;
+  left: -100%;
 }
 
 @keyframes godrays {

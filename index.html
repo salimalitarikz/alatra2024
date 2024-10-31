@@ -17,15 +17,44 @@
         <div id="nav_middle">links</div>
         <div id="nav_right">Proje Başlat</div>
 
-        <button id="menu_button">
+        <button onclick="menuToggle()" id="menu_button">
             <span></span>
             <span></span>
         </button>
     </nav>
 
-    <main>
+    <menu id="menu">
+        <div id="menu_header">
+            <div>
+                <h1>ALATRA</h1>
+                <span>dijital gelişim stüdyosu</span>
+            </div>
+            <div>menu</div>
+            <button onclick="menuToggle()">&#x2715;</button>
+        </div>
+
+        <div id="menu_links">
+            <a href="#">Index</a>
+            <a href="#">Hizmetlerimiz</a>
+            <a href="#">İletişim</a>
+        </div>
+
+        <div id="menu_footer">
+
+        </div>
+
+       
+    </menu>
+
+    <main id="main">
         Bu main
     </main>
+
+
+
+
     
+    <!-- // js files -->
+    <script src="site.js"></script>
 </body>
 </html>

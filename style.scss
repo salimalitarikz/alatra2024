@@ -1,0 +1,156 @@
+// imports 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+//root
+
+$gray_light:#f5f5f5;
+$gray_normal:#8f8f8f;
+$gray_dark:#333333;
+$orange:#ff1e00;
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+body{
+    background-color: $gray_light;
+    background-image: url(/ui/grain.png);
+    min-height: 120vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+// general
+
+button{
+    background-color: none;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+}
+
+// parts
+
+nav{
+    width: calc(100% - 1rem);
+    padding: .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.5rem;
+    position: sticky;
+    top: 1rem;
+    left: .5rem;
+    // background: rgba(0,0,0,0.5);
+    // -webkit-backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
+    // border: 1px solid rgba(0,0,0,0.25);
+    // border-radius: .5rem;
+
+    #nav_left{
+        >h1{
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+
+    
+
+    >#menu_button{
+        background-image: url(/ui/grain.png);
+        background-color: $gray_dark;
+        height: 90%;
+        aspect-ratio: 1.2/1;
+        position: absolute;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        gap: .5rem;
+        padding: .7rem;
+
+        >span{
+            width: 100%;
+            height: 3px;
+            border-radius: 1px;
+            background-color: $gray_light;
+
+            
+
+            &:nth-last-child(1){
+                width: 70%;
+            }
+        }
+        
+    }
+
+    >#nav_middle{
+        display: none;
+    }
+    >#nav_right{
+        display: none;
+    }
+
+}
+
+main{
+    width: calc(100% - 1rem);
+    position: relative;
+    left: .5rem;
+    margin-top: 2rem;
+    padding: .2rem;
+}
+
+
+
+
+
+// backgrounds
+  
+@keyframes godrays {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+.godrays {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    --stripes: repeating-linear-gradient( 100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16% );
+
+
+    --rainbow: repeating-linear-gradient( 100deg, #9a9a9a 10%, #141414 15%, #9a9a9a 20%, #8f8f8f 25%, #9a9a9a 30% );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+    filter: invert(100%);
+    mask-image: radial-gradient(ellipse at 100% 0%, black 30%, transparent 70%);
+    pointer-events: none;
+    opacity: .3;
+    z-index: -1;
+}
+
+.godrays::after {
+    content: "";
+position: absolute;
+inset: 0;
+background-image: var(--stripes), var(--rainbow);
+background-size: 200%, 100%;
+animation: godrays 80s linear infinite;
+background-attachment: fixed;
+mix-blend-mode: difference;
+}
+

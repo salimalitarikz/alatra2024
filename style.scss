@@ -244,7 +244,7 @@ menu{
     justify-content: space-between;
 
     >div{
-        height: 85%;
+        height: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -519,7 +519,7 @@ mix-blend-mode: difference;
     top: 0;
     right: 0;
     padding-left: 20rem;
-    padding-top: 20rem;
+    padding-top: 25rem;
     z-index: -2;
     // opacity: 0;
     transition: .5s;
@@ -542,7 +542,7 @@ mix-blend-mode: difference;
 
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) scale(.8);
 
         // box-shadow: 0 0 100px $orange;
         // background-color: $orange;
@@ -596,9 +596,9 @@ mix-blend-mode: difference;
   $frame:$gray_normal;
   $circles: #1f1f1f;
  
-*::before, *::after{content:'';position:absolute;}
+.ct *::before,.ct *::after{content:'';position:absolute;}
 
-.ct{margin:100px auto;position:relative;width:300px;height:300px}
+.ct{margin:0 auto;position:relative;width:300px;height:300px}
 
 /*Blue big circle and it's diameter coordinates*/
 .circle-large{width:300px;height:300px;position:relative;border-radius:100%;border:2px solid $circles}

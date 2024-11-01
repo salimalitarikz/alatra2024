@@ -25,7 +25,7 @@ window.addEventListener("scroll", (el) => {
     el.preventDefault();
 
 
-    let scrollVal = window.scrollTop;
+    let scrollVal = window.scrollY;
 
     console.log("---> " + scrollVal);
 

@@ -6,7 +6,7 @@
 $white:#f7f7f7;
 $gray_light:#d4d4d4;
 $gray_normal:#8f8f8f;
-$gray_dark:#303030;
+$gray_dark:#222222;
 $orange:#ff3e00;
 
 
@@ -22,6 +22,8 @@ $orange:#ff3e00;
     border:1px solid $gray_normal;
     width: fit-content;
     border-radius: 3rem;
+    overflow: hidden;
+    transition: .7s;
 
     &::before{
         content: "";
@@ -35,6 +37,19 @@ $orange:#ff3e00;
         left: 1rem;
         top: 50%;
         transform: translateY(-50%);
+        transition: .7s;
+    }
+
+    &:hover{
+        box-shadow: inset 0 0 150px $gray_dark;
+        padding-left: 3.2rem;
+
+        &::before{
+            box-shadow: 0 0 10px $orange, 0 0 10px $orange;
+            width: 20px;
+            
+            border-radius: 2px;
+        }
     }
 }
 
@@ -513,8 +528,8 @@ main{
         gap: 1rem;
 
         >h2{
-            font-weight: 500;
-            font-size: 1.3rem;
+            font-weight: 400;
+            font-size: 1.7rem;
             width: 90%;
         }
 
@@ -644,7 +659,6 @@ mix-blend-mode: difference;
   footer {
     width: 100vw;
     height: 100vw;
-    position: absolute;
     bottom: 0;
     overflow: hidden;
 

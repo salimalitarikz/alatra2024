@@ -11,10 +11,14 @@
   transition: 0.2s;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #f0f0f0;
   background-image: url(/ui/grain.png);
-  min-height: 200vh;
+  min-height: 250vh;
   position: relative;
   overflow-x: hidden;
 }
@@ -49,7 +53,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   height: 3.5rem;
-  position: sticky;
+  position: fixed;
   top: 1rem;
   left: 0.5rem;
   z-index: 2;
@@ -167,6 +171,25 @@ menu.menu_active {
   left: 0%;
 }
 
+.decoration_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 87%;
+  width: 100%;
+  z-index: -2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.decoration_box > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 main {
   width: calc(100% - 1rem);
   position: relative;
@@ -182,24 +205,44 @@ main {
 main.main_disabled {
   opacity: 0;
 }
+main .main_part {
+  position: relative;
+}
 main > #main_part_1 {
-  padding-top: 20vh;
   height: 100vh;
 }
+main > #main_part_1 > .decoration_box > div:nth-last-child(1) > div:nth-last-child(1) {
+  overflow: hidden;
+}
+main > #main_part_1 > .decoration_box > div:nth-last-child(1) > div:nth-last-child(1) #scroll_text {
+  font-size: 1.1rem;
+  display: inline-block;
+  animation: scroll_text_an 5s linear infinite;
+}
+@keyframes scroll_text_an {
+  0% {
+    transform: translateY(-2rem) rotate(10deg);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2rem);
+  }
+}
 main > #main_part_1 > h1 {
+  margin-top: 28vh;
   font-size: 8vw;
   font-weight: 600;
-}
-main > #main_part_1 > h1 > span {
-  -webkit-text-decoration: underline #ff3e00;
-          text-decoration: underline #ff3e00;
 }
 main > #main_part_2 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 1rem;
-  height: 50vh;
 }
 main > #main_part_2 > div {
   height: 80%;
@@ -215,7 +258,7 @@ main > #main_part_2 > div > div {
 }
 main > #main_part_2 > div > div > h2 {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 main > #main_part_2 > div > div ul {
   list-style-type: none;
@@ -232,6 +275,7 @@ main > #main_part_2 > div#part_2_left {
 main > #main_part_2 > div#part_2_right {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
 }
 @keyframes godrays {
@@ -271,7 +315,7 @@ main > #main_part_2 > div#part_2_right {
   mix-blend-mode: difference;
 }
 
-.globe_wrapper {
+#globe_wrapper {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -279,10 +323,17 @@ main > #main_part_2 > div#part_2_right {
   right: 0;
   padding-left: 20rem;
   padding-top: 20rem;
-  overflow: hidden;
   z-index: -2;
+  transition: 0.5s;
 }
-.globe_wrapper #globe {
+#globe_wrapper.passive {
+  opacity: 0;
+}
+#globe_wrapper.passive > #globe {
+  transition: 0.5s;
+  background-color: transparent;
+}
+#globe_wrapper #globe {
   width: 33rem;
   height: 33rem;
   position: absolute;
@@ -294,25 +345,9 @@ main > #main_part_2 > div#part_2_right {
   box-shadow: 0 0 100px #ff3e00;
   transition: 0.5s;
   background-image: url(/ui/grain.png);
-  animation: globe_an linear forwards;
-  animation-timeline: scroll(root);
 }
-.globe_wrapper #globe.globe_bigger {
+#globe_wrapper #globe.globe_bigger {
   transition: 1s;
   width: 66rem;
   height: 66rem;
-}
-.globe_wrapper #globe.globe_passive {
-  background-color: transparent;
-}
-@keyframes globe_an {
-  30% {
-    width: 55rem;
-    height: 55rem;
-  }
-  100% {
-    width: 55rem;
-    height: 55rem;
-    background-color: #f0f0f0;
-  }
 }/*# sourceMappingURL=style.css.map */

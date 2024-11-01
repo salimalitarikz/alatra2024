@@ -15,6 +15,7 @@ $orange:#ff3e00;
 }
 
 
+
 *{
     margin: 0;
     padding: 0;
@@ -23,10 +24,14 @@ $orange:#ff3e00;
     transition: .2s;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 body{
     background-color: $gray_light;
     background-image: url(/ui/grain.png);
-    min-height: 200vh;
+    min-height: 250vh;
     position: relative;
     overflow-x: hidden;
 
@@ -79,7 +84,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     height: 3.5rem;
-    position: sticky;
+    position: fixed;
     top: 1rem;
     left: .5rem;
     z-index: 2;
@@ -227,6 +232,26 @@ menu{
     }
 }
 
+.decoration_box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 87%;
+    width: 100%;
+    z-index: -2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    >div{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
 main{
     width: calc(100% - 1rem);
     position: relative;
@@ -245,16 +270,59 @@ main{
         opacity: 0;
     }
 
+    .main_part{
+        position: relative;
+    }
+
     >#main_part_1{
-        padding-top: 20vh;
         height: 100vh;
 
+        >.decoration_box{
+
+            >div:nth-last-child(1){
+                >div:nth-last-child(1){
+                    overflow: hidden;
+                    #scroll_text{
+                        font-size: 1.1rem;
+                        display: inline-block;
+                        animation: scroll_text_an 5s linear infinite;
+        
+                        @keyframes scroll_text_an {
+                            0%{
+                                transform: translateY(-2rem) rotate(10deg);
+                            }
+                            
+
+                            30%{
+                                transform: translateY(0);
+                                
+                            }
+
+                            70%{
+                                transform: translateY(0);
+                            }
+                            
+
+                            100%{
+                                transform: translateY(2rem);
+                            }
+                        }
+        
+                    }
+                }
+            }
+
+           
+        }
+
+
         >h1{
+            margin-top: 28vh;
             font-size: 8vw;
             font-weight: 600;
 
             >span{
-                text-decoration: underline $orange;
+                // text-decoration: underline $orange;
             }
         }
     }
@@ -264,7 +332,6 @@ main{
         justify-content: center;
         align-items: flex-start;
         gap: 1rem;
-        height: 50vh;
         
 
 
@@ -341,7 +408,7 @@ main{
 
                 >h2{
                     font-size: 1.2rem;
-                    font-weight: 500;
+                    font-weight: 600;
                 }
 
                 ul{
@@ -366,6 +433,7 @@ main{
             &#part_2_right{
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
                 gap: 1rem;
                 
                 >div{
@@ -425,7 +493,7 @@ mix-blend-mode: difference;
 }
 
 
-.globe_wrapper{
+#globe_wrapper{
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -433,9 +501,18 @@ mix-blend-mode: difference;
     right: 0;
     padding-left: 20rem;
     padding-top: 20rem;
-    overflow: hidden;
     z-index: -2;
     // opacity: 0;
+    transition: .5s;
+
+    &.passive{
+        opacity: 0;
+
+        >#globe{
+            transition: .5s;
+            background-color: transparent;
+        }
+    }
 
     #globe{
         width: 33rem;
@@ -456,18 +533,16 @@ mix-blend-mode: difference;
         
        }
 
-       &.globe_passive{
-        background-color: transparent;
-       }
+       
 
 
-       animation: globe_an linear forwards;
-       animation-timeline: scroll(root);
+    //    animation: globe_an linear forwards;
+    //    animation-timeline: scroll(root);
 
-        @keyframes globe_an {
-            30%{width: 55rem; height: 55rem;}
-            100%{width: 55rem; height: 55rem; background-color: $gray_light;}
-        }
+    //     @keyframes globe_an {
+    //         30%{width: 55rem; height: 55rem;}
+    //         100%{width: 55rem; height: 55rem;}
+    //     }
     
     }
 }

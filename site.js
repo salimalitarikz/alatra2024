@@ -31,6 +31,11 @@ window.addEventListener("scroll", (el) => {
 
 
 
+    if (scrollVal > 100) {
+        qs("#globe_wrapper").classList.add("passive");
+    }else{
+        qs("#globe_wrapper").classList.remove("passive");        
+    }
 
     // question appears then becomes white colored
     if (scrollVal > 650) {

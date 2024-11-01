@@ -353,10 +353,8 @@ main > #main_part_2 > div > div#part_2_right {
   position: absolute;
   bottom: -5rem;
   right: -15rem;
-  background-color: #ff3e00;
   z-index: -2;
   border-radius: 50%;
-  box-shadow: 0 0 100px #ff3e00;
   transition: 0.5s;
   background-image: url(/ui/grain.png);
 }
@@ -396,18 +394,18 @@ footer > div {
   height: 300px;
   position: relative;
   border-radius: 100%;
-  border: 1px solid #ff3e00;
+  border: 1px solid #000000;
 }
 
 .circle-large::before {
-  background: #ff3e00;
+  background: #000000;
   top: 50%;
   width: 299px;
   height: 1px;
 }
 
 .circle-large::after {
-  background: #ff3e00;
+  background: #000000;
   left: 50%;
   top: 0;
   width: 1px;
@@ -419,7 +417,7 @@ footer > div {
   width: 148px;
   height: 148px;
   border-radius: 100%;
-  box-shadow: 0 0 0 1px #8f8f8f;
+  box-shadow: 0 0 0 1px #000000;
   position: absolute;
   top: 75px;
   left: 75px;
@@ -431,7 +429,7 @@ footer > div {
 .bullseye {
   width: 11px;
   height: 11px;
-  border: 1px solid #8f8f8f;
+  border: 1px solid #ff3e00;
   border-radius: 100%;
   position: absolute;
   left: 50%;
@@ -446,12 +444,12 @@ footer > div {
   left: -71px;
   top: -71px;
   border-radius: 100%;
-  border: 1px solid #ff3e00;
+  border: 2px solid #ff3e00;
 }
 
 .axis {
   position: absolute;
-  background: #ff3e00;
+  background: #000000;
   border: 0;
   z-index: 2;
   margin: 0;
@@ -493,7 +491,7 @@ footer > div {
   width: 11px;
   height: 11px;
   border-radius: 100%;
-  border: 1px solid #f7f7f7;
+  border: 1px solid #8f8f8f;
   position: absolute;
   top: 69px;
   left: -5px;

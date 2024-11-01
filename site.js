@@ -34,9 +34,9 @@ window.addEventListener("scroll", (el) => {
 
     // question appears then becomes white colored
     if (scrollVal > 200) {
-        qs("#globe").classList.add("activated");
+        qs("#body").classList.add("dark");
     }else{
-        qs("#globe").classList.remove("activated");        
+        qs("#body").classList.remove("dark");        
     }
 
    

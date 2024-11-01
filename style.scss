@@ -4,10 +4,10 @@
 //root
 
 $white:#f7f7f7;
-$gray_light:#dbdbdb;
+$gray_light:#f0f0f0;
 $gray_normal:#8f8f8f;
 $gray_dark:#333333;
-$orange:#ff3300;
+$orange:#ff3e00;
 
 
 
@@ -78,8 +78,8 @@ nav{
         width: 100vw;
         height: 250%;
         pointer-events: none;
-        backdrop-filter: blur(10px);
-        background-color: #f7f7f741;
+        backdrop-filter: blur(5px);
+        background-color: #ffffff96;
         mask-image: linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 100%);
         position: absolute;
         top: -1.1rem;
@@ -226,6 +226,7 @@ main{
 
         >h1{
             font-size: 8vw;
+            font-weight: 600;
 
             >span{
                 text-decoration: underline $orange;
@@ -291,6 +292,7 @@ mix-blend-mode: difference;
     padding-left: 20rem;
     padding-top: 20rem;
     overflow: hidden;
+    z-index: -2;
 
     #globe{
         width: 33rem;

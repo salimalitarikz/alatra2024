@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #dbdbdb;
+  background-color: #f0f0f0;
   background-image: url(/ui/grain.png);
   min-height: 150vh;
   position: relative;
@@ -50,9 +50,9 @@ nav::before {
   width: 100vw;
   height: 250%;
   pointer-events: none;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  background-color: rgba(247, 247, 247, 0.2549019608);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.5882352941);
   -webkit-mask-image: linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 100%);
           mask-image: linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 100%);
   position: absolute;
@@ -82,7 +82,7 @@ nav > #menu_button > span {
   width: 100%;
   height: 3px;
   border-radius: 1px;
-  background-color: #dbdbdb;
+  background-color: #f0f0f0;
 }
 nav > #menu_button > span:nth-last-child(1) {
   width: 70%;
@@ -171,10 +171,11 @@ main > #main_part_1 {
 }
 main > #main_part_1 > h1 {
   font-size: 8vw;
+  font-weight: 600;
 }
 main > #main_part_1 > h1 > span {
-  -webkit-text-decoration: underline #ff3300;
-          text-decoration: underline #ff3300;
+  -webkit-text-decoration: underline #ff3e00;
+          text-decoration: underline #ff3e00;
 }
 
 @keyframes godrays {
@@ -223,6 +224,7 @@ main > #main_part_1 > h1 > span {
   padding-left: 20rem;
   padding-top: 20rem;
   overflow: hidden;
+  z-index: -2;
 }
 .globe_wrapper #globe {
   width: 33rem;
@@ -230,10 +232,10 @@ main > #main_part_1 > h1 > span {
   position: absolute;
   bottom: -5rem;
   right: -15rem;
-  background-color: #ff3300;
+  background-color: #ff3e00;
   z-index: -2;
   border-radius: 50%;
-  box-shadow: 0 0 100px #ff3300;
+  box-shadow: 0 0 100px #ff3e00;
   transition: 0.5s;
   background-image: url(/ui/grain.png);
 }

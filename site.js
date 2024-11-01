@@ -16,7 +16,9 @@ function menuToggle() {
 }
 
 
-
+setTimeout(() => {
+    qs(".circle-large").classList.remove("passive");
+}, 1600);
 
 
 

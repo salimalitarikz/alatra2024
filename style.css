@@ -171,8 +171,8 @@ menu {
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  transition: 0.5s;
-  padding: 0.7rem;
+  transition: 0.5s ease;
+  padding: 0.4rem;
   background: rgba(0, 0, 0, 0.5);
   background-image: url(/ui/grain.png);
   -webkit-backdrop-filter: blur(10px);
@@ -477,6 +477,14 @@ footer > div {
   height: 299px;
 }
 
+.circle-large * {
+  transition: 0.5s !important;
+  opacity: 1;
+}
+.circle-large.passive * {
+  opacity: 0;
+}
+
 /*Smaller, orange, centered circle*/
 .circle-small {
   width: 148px;
@@ -504,10 +512,10 @@ footer > div {
 }
 
 .bullseye::before {
-  width: 149px;
-  height: 149px;
-  left: -71px;
-  top: -71px;
+  width: 148px;
+  height: 148px;
+  left: -71.5px;
+  top: -71.5px;
   border-radius: 100%;
   border: 2px solid #ff3e00;
 }

@@ -24,7 +24,7 @@ body {
 }
 body.dark {
   transition: 1s;
-  background-color: #3f3f3f;
+  background-color: #303030;
 }
 button {
   background-color: none;
@@ -83,7 +83,7 @@ nav #nav_left > span {
 }
 nav > #menu_button {
   background-image: url(/ui/grain.png);
-  background-color: #3f3f3f;
+  background-color: #303030;
   height: 90%;
   aspect-ratio: 1.2/1;
   position: absolute;
@@ -194,7 +194,7 @@ main {
   width: calc(100% - 1rem);
   position: relative;
   left: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 6rem;
   padding: 0.2rem;
   transition-delay: 0.3s !important;
   transition: 0.6s;
@@ -210,6 +210,9 @@ main .main_part {
 }
 main > #main_part_1 {
   height: 100vh;
+}
+main > #main_part_1 > .decoration_box > div:nth-child(1) > div:nth-last-child(1) {
+  font-style: italic;
 }
 main > #main_part_1 > .decoration_box > div:nth-last-child(1) > div:nth-last-child(1) {
   overflow: hidden;
@@ -241,14 +244,25 @@ main > #main_part_1 > h1 {
 main > #main_part_2 {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
 }
+main > #main_part_2 > h1 {
+  font-size: 2rem;
+  padding: 0.5rem;
+  transform: translateY(-100%);
+}
 main > #main_part_2 > div {
-  height: 80%;
-  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 main > #main_part_2 > div > div {
+  height: 100%;
+  width: 50%;
+}
+main > #main_part_2 > div > div > div {
   width: 100%;
   border-radius: 0.7rem;
   padding: 0.5rem;
@@ -256,27 +270,27 @@ main > #main_part_2 > div > div {
   flex-direction: column;
   gap: 1.5rem;
 }
-main > #main_part_2 > div > div > h2 {
+main > #main_part_2 > div > div > div > h2 {
   font-size: 1.2rem;
   font-weight: 600;
 }
-main > #main_part_2 > div > div ul {
+main > #main_part_2 > div > div > div ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   font-size: 0.9rem;
 }
-main > #main_part_2 > div#part_2_left {
+main > #main_part_2 > div > div#part_2_left {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-main > #main_part_2 > div#part_2_right {
+main > #main_part_2 > div > div#part_2_right {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
 }
 @keyframes godrays {
   from {
@@ -318,7 +332,7 @@ main > #main_part_2 > div#part_2_right {
 #globe_wrapper {
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   padding-left: 20rem;

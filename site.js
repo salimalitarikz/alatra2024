@@ -33,7 +33,7 @@ window.addEventListener("scroll", (el) => {
 
 
     // question appears then becomes white colored
-    if (scrollVal > 200) {
+    if (scrollVal > 650) {
         qs("#body").classList.add("dark");
     }else{
         qs("#body").classList.remove("dark");        

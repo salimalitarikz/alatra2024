@@ -7,7 +7,7 @@ $white:#f7f7f7;
 $gray_light:#dbdbdb;
 $gray_normal:#8f8f8f;
 $gray_dark:#333333;
-$orange:#ff1e00;
+$orange:#ff3300;
 
 
 
@@ -48,15 +48,13 @@ a{
 
 body:has(.menu_active){
     nav{
-        opacity: .3;
+        opacity: 0;
     }
 }
 
 // parts
 
 nav{
-    transition-delay: .3s;
-    transition: .5s;
     width: calc(100% - 1rem);
     padding: .2rem;
     display: flex;
@@ -66,6 +64,9 @@ nav{
     position: sticky;
     top: 1rem;
     left: .5rem;
+    z-index: 2;
+    transition-delay: .3s !important;
+    transition: .6s;
     // background: rgba(0,0,0,0.5);
     // -webkit-backdrop-filter: blur(10px);
     // backdrop-filter: blur(10px);
@@ -196,12 +197,25 @@ main{
     left: .5rem;
     margin-top: 2rem;
     padding: .2rem;
-    background-color: $gray_normal;
+    transition-delay: .3s !important;
     transition: .6s;
 
     &.main_disabled{
-        transition: .5s;
-        left: -100%;
+        // transition: .5s;
+        // left: -100%;
+        opacity: 0;
+    }
+
+    >#main_part_1{
+        padding-top: 20vh;
+
+        >h1{
+            font-size: 8vw;
+
+            >span{
+                text-decoration: underline $orange;
+            }
+        }
     }
 }
 

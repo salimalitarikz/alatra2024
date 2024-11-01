@@ -22,7 +22,7 @@ $orange:#ff3300;
 body{
     background-color: $gray_light;
     background-image: url(/ui/grain.png);
-    min-height: 120vh;
+    min-height: 150vh;
     position: relative;
     overflow-x: hidden;
 }
@@ -72,6 +72,20 @@ nav{
     // backdrop-filter: blur(10px);
     // border: 1px solid rgba(0,0,0,0.25);
     // border-radius: .5rem;
+
+    &::before{
+        content: "";
+        width: 100vw;
+        height: 250%;
+        pointer-events: none;
+        backdrop-filter: blur(10px);
+        background-color: #f7f7f741;
+        mask-image: linear-gradient(#000000 50%, rgba(0, 0, 0, 0) 100%);
+        position: absolute;
+        top: -1.1rem;
+        left: -.5rem;
+        z-index: -1;
+    }
 
     #nav_left{
         >h1{
@@ -134,6 +148,7 @@ menu{
     padding: .7rem;
     // glass effect
     background: rgba(0, 0, 0, 0.5);
+    background-image: url(/ui/grain.png);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 0, 0, 0.25);
@@ -266,3 +281,40 @@ background-attachment: fixed;
 mix-blend-mode: difference;
 }
 
+
+.globe_wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-left: 20rem;
+    padding-top: 20rem;
+    overflow: hidden;
+
+    #globe{
+        width: 33rem;
+        height: 33rem;
+        position: absolute;
+        bottom: -5rem;
+        right: -15rem;
+        background-color: $orange;
+        z-index: -2;
+        border-radius: 50%;
+        box-shadow: 0 0 100px $orange;
+        transition: .5s;
+        background-image: url(/ui/grain.png);
+       &.globe_bigger{
+        transition: 1s;
+        width: 66rem;
+        height: 66rem;
+       }
+
+       &.globe_passive{
+        background-color: transparent;
+       }
+
+        
+    
+    }
+}

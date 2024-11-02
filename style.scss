@@ -696,7 +696,59 @@ main{
             }
         }
 
+        >#part_4_footer{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            >span{
+                font-size: 1rem;
+                color: $gray_normal;
+            }
+            >h3{
+                width: 90%;
+                @extend .font_2;
+                color: $gray_light;
+                font-size: 1.4rem;
+                font-weight: 300;
+                
+                >span{
+                    text-decoration: underline 2px $orange;
+                }
+            }
+        }
+
         
+    }
+
+    >#main_part_5{
+        margin-top: 15vh;
+        min-height: 120vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+       
+
+        >h1{
+            color: $gray_normal;
+        }
+
+        >#part_5_content{
+            position: relative;
+            flex-grow: 1;
+
+            >#part_5_progress_bar{
+                height: 0%;
+                width: 2px;
+                background-color: $orange;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: 1s ease;
+                
+
+            }
+        }
     }
 }
 

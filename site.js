@@ -46,6 +46,19 @@ window.addEventListener("scroll", (el) => {
         qs("#body").classList.remove("dark");        
     }
 
+    if (scrollVal > 3970) {
+        qs("#part_5_progress_bar").style.height = "60%";
+    }else if(scrollVal > 3870){
+        qs("#part_5_progress_bar").style.height = "45%";
+    }else if(scrollVal > 3770){
+        qs("#part_5_progress_bar").style.height = "30%";
+    }else if(scrollVal > 3670){
+        qs("#part_5_progress_bar").style.height = "15%";
+    }else{
+        qs("#part_5_progress_bar").style.height = "0%";
+    }
+    
+
    
 
 

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-.grained {
+.grained, footer > span {
   background-image: url(/ui/grain.png);
 }
 
@@ -370,6 +370,82 @@ main > #main_part_3 > h2 {
 main > #main_part_3 > a {
   margin-top: 1rem;
 }
+main > #main_part_4 {
+  height: 120vh;
+}
+
+footer {
+  height: 70vh;
+  width: 100%;
+  color: #d4d4d4;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  padding-top: 1rem;
+  position: relative;
+  z-index: 1;
+}
+footer > span {
+  position: absolute;
+  bottom: -10%;
+  right: -20%;
+  display: inline-block;
+  width: 80vw;
+  height: 50vh;
+  box-shadow: 0 0 70px #ff3e00, 0 0 70px #ff3e00, 0 0 70px #ff3e00;
+  animation: footer_globe_an 5s linear infinite;
+  aspect-ratio: 1/1;
+  background-color: #ff3e00;
+  border-top-left-radius: 80%;
+  z-index: -3;
+}
+@keyframes footer_globe_an {
+  0% {
+    box-shadow: 0 0 70px #ff3e00;
+  }
+  50% {
+    box-shadow: 0 0 70px #ff3e00, 0 0 70px #ff3e00, 0 0 70px #ff3e00;
+  }
+  100% {
+    box-shadow: 0 0 70px #ff3e00;
+  }
+}
+footer > #footer_header {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}
+footer > #footer_content {
+  padding: 0.5rem;
+  height: 100%;
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 4rem;
+}
+footer > #footer_content > div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-transform: uppercase;
+  gap: 1.5rem;
+}
+footer > #footer_footer {
+  font-size: 6.2rem;
+  color: #d4d4d4;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  line-height: 75%;
+  text-align: center;
+  position: relative;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%) translateY(0.2rem);
+}
+footer > #footer_footer > span {
+  position: relative;
+  display: inline-block;
+}
 
 @keyframes godrays {
   from {
@@ -439,17 +515,6 @@ main > #main_part_3 > a {
   transition: 1s;
   width: 66rem;
   height: 66rem;
-}
-
-footer {
-  width: 100vw;
-  height: 100vw;
-  bottom: 0;
-  overflow: hidden;
-}
-footer > div {
-  width: 100%;
-  height: 100%;
 }
 
 .ct *::before, .ct *::after {

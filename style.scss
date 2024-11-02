@@ -8,6 +8,7 @@ $gray_light:#d4d4d4;
 $gray_normal:#8f8f8f;
 $gray_dark:#222222;
 $orange:#ff3e00;
+$black:#0c0c0c;
 
 
 .grained{
@@ -604,11 +605,98 @@ main{
         }
         
     }
+
+    >#main_part_4{
+        height: 120vh;
+    }
 }
 
 
 
+footer{
+    height: 70vh;
+    width: 100%;
+    // background-color: $black;
+    // @extend .grained;
+    color: $gray_light;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    padding-top: 1rem;
+    
+    position: relative;
+    z-index: 1;
 
+    // footer globe
+    >span{
+        position: absolute;
+        bottom: -10%;
+        right: -20%;
+        display: inline-block;
+        width: 80vw;
+        height: 50vh;
+        box-shadow: 0 0 70px $orange,0 0 70px $orange,0 0 70px $orange;
+        animation: footer_globe_an 5s linear infinite;
+        @keyframes footer_globe_an {
+            0%{box-shadow: 0 0 70px $orange}
+            50%{box-shadow: 0 0 70px $orange,0 0 70px $orange,0 0 70px $orange;}
+            100%{box-shadow: 0 0 70px $orange}
+        }
+
+        aspect-ratio: 1/1;
+        background-color: $orange;
+        // border-radius: 10%;
+        border-top-left-radius: 80%;
+        z-index: -3;
+        @extend .grained;
+
+    }
+
+    >#footer_header{
+        padding: .5rem;
+        font-size: 1.4rem;
+
+    }
+
+
+    
+    >#footer_content{
+        padding: .5rem;
+        height: 100%;
+        display: flex;
+        gap: 2rem;
+        padding-bottom: 4rem;
+        >div{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-transform: uppercase;
+            gap: 1.5rem;
+        }
+
+    }
+
+    >#footer_footer{
+        font-size: 6.2rem;
+        color:$gray_light;
+        font-weight: 900;
+        display: flex;
+        flex-direction: column;
+        line-height: 75%;
+        text-align: center;
+        position: relative;
+        align-items: center;
+        left: 50%;
+        transform: translateX(-50%) translateY(.2rem);
+
+        >span{
+            position: relative;
+        
+            display: inline-block;
+        }
+    }
+}
 
 
 
@@ -720,19 +808,7 @@ mix-blend-mode: difference;
 // golden ratio
 
   
-  
-  footer {
-    width: 100vw;
-    height: 100vw;
-    bottom: 0;
-    overflow: hidden;
-
-    >div{
-        width: 100%;
-        height: 100%;
-    }
-  }
-  
+ 
   
   $frame:$gray_normal;
   $circles: #1f1f1f;

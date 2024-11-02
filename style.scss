@@ -607,7 +607,82 @@ main{
     }
 
     >#main_part_4{
-        height: 120vh;
+        min-height: 100vh;
+        padding-top: 7rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        >h1{
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: $gray_normal;
+            // padding: .5rem;
+        }
+
+        >.part_4_box{
+            width: 100%;
+            height: 25rem;
+            // background-color: #b4b4b418;
+            display: flex;
+            gap: .5rem;
+            color: $gray_light;
+
+            >div{
+                // border: 1px solid #4b4b4b;
+            }
+
+            >.part_4_box_left{
+                width: 45%;
+                height: 100%;
+                // background-color: $orange;
+                text-align: left;
+                padding: .2rem;
+                padding-right: .5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                // gap: 1rem;
+                font-weight: 300;
+                
+                
+                >h2{
+                    font-size: 1.1rem;
+                    font-weight: 400;
+                    margin-bottom: .5rem;
+                }
+
+
+                >div{
+                    display: flex;
+                    flex-direction: column;
+                    gap: .1rem;
+
+                    >span{
+                        width: fit-content;
+                        border-radius: 3px;
+                        font-size: .9rem;
+                    }
+
+                    >span:nth-child(1){
+                        font-size: .8rem;
+                        color: $gray_normal;
+                        font-weight: 400;
+                    }
+                }
+
+                >a{
+                    @extend .button_outline;
+                }
+            }
+            >.part_4_box_right{
+                width: 55%;
+                height: 100%;
+                background-color: #4b4b4b;
+                border-radius: .5rem;
+                @extend .grained;
+            }
+        }
+        
     }
 }
 
@@ -655,7 +730,6 @@ footer{
     >#footer_header{
         padding: .5rem;
         font-size: 1.4rem;
-
     }
 
 

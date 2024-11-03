@@ -28,10 +28,15 @@ const scrollPause = 500; // Duraklama süresi (ms)
 let isPaused = false; // Duraklama kontrolü
 let hasSnapped = Array(snapValues.length).fill(false); // Her snap için kontrol dizisi   
 
-if (Window.scrollY > snapValues[snapValues.length]) {
 
-    snapValues.forEach((index) => {
-        hasSnapped[index].fill(false);
+console.log(snapValues[snapValues.length-1]);
+console.log(hasSnapped[1]);
+
+if ((window.scrollY) > (snapValues[snapValues.length-1])) {
+
+    snapValues.forEach((snapValue,index) => {
+        console.log(index);
+        hasSnapped[index] = true;
     });
 }
 

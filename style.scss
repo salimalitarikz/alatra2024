@@ -750,6 +750,7 @@ main{
                 left: 0;
                 transition: 1s ease;
                 border-radius: 2px;
+                filter: unset;
 
                 >span{
                     display: inline-block;
@@ -764,6 +765,7 @@ main{
                     z-index: -2;
                     @extend .grained;
                     box-shadow: 0 0 5px $orange;
+                    
 
                 }
             }
@@ -777,6 +779,12 @@ main{
                 align-items: center;
                 color: $gray_light;
                 gap: 1rem;
+                filter: blur(50px);
+                transition: 1s;
+
+                &.active{
+                    filter: unset;
+                }
 
                 @extend .font_2;
 
@@ -784,12 +792,14 @@ main{
                     font-size: .9rem;
                     font-weight: 300;
                     @extend .font_2;
+                    padding-left: .5rem;
                 }
 
                 &:nth-child(1){
                     position: absolute;
                     top: -7.5%;
                     color: $orange;
+                    filter: unset;
                     
 
                     >h4{

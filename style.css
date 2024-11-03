@@ -483,6 +483,7 @@ main > #main_part_5 > #part_5_content > #part_5_progress_bar {
   left: 0;
   transition: 1s ease;
   border-radius: 2px;
+  filter: unset;
 }
 main > #main_part_5 > #part_5_content > #part_5_progress_bar > span {
   display: inline-block;
@@ -505,15 +506,22 @@ main > #main_part_5 > #part_5_content > div {
   align-items: center;
   color: #d4d4d4;
   gap: 1rem;
+  filter: blur(50px);
+  transition: 1s;
+}
+main > #main_part_5 > #part_5_content > div.active {
+  filter: unset;
 }
 main > #main_part_5 > #part_5_content > div > h4 {
   font-size: 0.9rem;
   font-weight: 300;
+  padding-left: 0.5rem;
 }
 main > #main_part_5 > #part_5_content > div:nth-child(1) {
   position: absolute;
   top: -7.5%;
   color: #ff3e00;
+  filter: unset;
 }
 main > #main_part_5 > #part_5_content > div:nth-child(1) > h4 {
   font-weight: 500 !important;

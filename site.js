@@ -78,27 +78,34 @@ window.addEventListener("scroll", (el) => {
     }else{
         qs("#body").classList.remove("dark");        
     }
+    
+    if (scrollVal > 4500) {
+        qs("#body").classList.add("white");
+    }else{
+        qs("#body").classList.remove("white");        
+    }
+    
 
-    if(scrollVal > 4150){
+    if(4050 > scrollVal > 4150){
         qs("#part_5_progress_bar").style.height = "90%";
         qs("#part_5_c_6").classList.add("active");
-    }else if (scrollVal > 4050) {
+    }else if (3951 > scrollVal > 4050) {
         qs("#part_5_progress_bar").style.height = "75%";
         qs("#part_5_c_6").classList.remove("active");
         qs("#part_5_c_5").classList.add("active");
-    }else if (scrollVal > 3950) {
+    }else if (3851 > scrollVal > 3950) {
         qs("#part_5_progress_bar").style.height = "60%";
         qs("#part_5_c_5").classList.remove("active");
         qs("#part_5_c_4").classList.add("active");
-    }else if(scrollVal > 3850){
+    }else if(3751 > scrollVal > 3850){
         qs("#part_5_progress_bar").style.height = "45%";
         qs("#part_5_c_4").classList.remove("active");
         qs("#part_5_c_3").classList.add("active");
-    }else if(scrollVal > 3750){
+    }else if(3651 > scrollVal > 3750){
         qs("#part_5_progress_bar").style.height = "30%";
         qs("#part_5_c_3").classList.remove("active");
         qs("#part_5_c_2").classList.add("active");
-    }else if(scrollVal > 3650){
+    }else if(3551 >scrollVal > 3650){
         qs("#part_5_progress_bar").style.height = "15%";
         qs("#part_5_c_2").classList.remove("active");
         qs("#part_5_c_1").classList.add("active");

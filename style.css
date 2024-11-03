@@ -537,8 +537,30 @@ main > #main_part_5 > #part_5_content > div:nth-child(1) > span {
 main > #main_part_5 > #part_5_content > div:nth-child(2) {
   margin-top: 13%;
 }
+main > #main_part_6 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+main > #main_part_6 > #part_6_banner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+main > #main_part_6 > #part_6_banner > h1 {
+  font-size: 1.3rem;
+  color: #8f8f8f;
+  font-weight: 600;
+  padding-right: 2rem;
+}
+main > #main_part_6 > #part_6_banner > h2 {
+  font-size: 1.1rem;
+  color: #d4d4d4;
+  font-weight: 400;
+}
 
 footer {
+  margin-top: 20vh;
   height: 70vh;
   width: 100%;
   color: #d4d4d4;

@@ -826,11 +826,39 @@ main{
             }
         }
     }
+
+    >#main_part_6{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        >#part_6_banner{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            >h1{
+                font-size: 1.3rem;
+                color: $gray_normal;
+                font-weight: 600;
+                padding-right: 2rem;
+            }
+    
+            >h2{
+                font-size: 1.1rem;
+                color: $gray_light;
+                font-weight: 400;
+            }
+        }
+
+        
+        
+    }
 }
 
 
 
 footer{
+    margin-top: 20vh;
     height: 70vh;
     width: 100%;
     // background-color: $black;

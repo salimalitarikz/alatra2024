@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-.grained, footer > span, main > #main_part_4 > .part_4_box > .part_4_box_right {
+.grained, footer > span, main > #main_part_5 > #part_5_content > #part_5_progress_bar > span, main > #main_part_4 > .part_4_box > .part_4_box_right {
   background-image: url(/ui/grain.png);
 }
 
@@ -40,7 +40,7 @@
   border-radius: 2px;
 }
 
-.font_2, main > #main_part_4 > #part_4_footer > h3, main > #main_part_2 > div > div > p, main > #main_part_2 > div > div > div > div:nth-child(1) > h2 {
+.font_2, main > #main_part_5 > #part_5_content > div > h4, main > #main_part_5 > #part_5_content > div, main > #main_part_4 > #part_4_footer > h3, main > #main_part_2 > div > div > p, main > #main_part_2 > div > div > div > div:nth-child(1) > h2 {
   font-family: "Albert Sans", sans-serif;
 }
 
@@ -469,7 +469,10 @@ main > #main_part_5 > h1 {
 }
 main > #main_part_5 > #part_5_content {
   position: relative;
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  padding-left: 1rem;
 }
 main > #main_part_5 > #part_5_content > #part_5_progress_bar {
   height: 0%;
@@ -479,6 +482,47 @@ main > #main_part_5 > #part_5_content > #part_5_progress_bar {
   top: 0;
   left: 0;
   transition: 1s ease;
+  border-radius: 2px;
+}
+main > #main_part_5 > #part_5_content > #part_5_progress_bar > span {
+  display: inline-block;
+  width: 2.3rem;
+  height: 2rem;
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 40%;
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  background-color: #ff3e00;
+  z-index: -2;
+  box-shadow: 0 0 5px #ff3e00;
+}
+main > #main_part_5 > #part_5_content > div {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #d4d4d4;
+  gap: 1rem;
+}
+main > #main_part_5 > #part_5_content > div > h4 {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+main > #main_part_5 > #part_5_content > div:nth-child(1) {
+  position: absolute;
+  top: -7.5%;
+  color: #ff3e00;
+}
+main > #main_part_5 > #part_5_content > div:nth-child(1) > h4 {
+  font-weight: 500 !important;
+}
+main > #main_part_5 > #part_5_content > div:nth-child(1) > span {
+  color: #d4d4d4;
+}
+main > #main_part_5 > #part_5_content > div:nth-child(2) {
+  margin-top: 13%;
 }
 
 footer {

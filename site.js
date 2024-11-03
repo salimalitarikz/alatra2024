@@ -22,6 +22,38 @@ setTimeout(() => {
 
 
 
+const snapValues = [3700,3800,3900,4000,4100,4200]; // Birden fazla snap noktası
+const scrollPause = 500; // Duraklama süresi (ms)
+let isPaused = false; // Duraklama kontrolü
+let hasSnapped = Array(snapValues.length).fill(false); // Her snap için kontrol dizisi   
+
+
+function snapScroll(snapValue, index) {
+    // Snap işlemleri
+    if (!hasSnapped[index] && window.scrollY >= snapValue && !isPaused) {
+        isPaused = true; // Duraklamayı başlat
+        hasSnapped[index] = true; // Snap durumunu kaydet
+
+        // Kaydırmayı geçici olarak durdur
+        const currentScrollPosition = window.scrollY;
+        qs("html").style.overflowY = 'hidden'; // Kaydırmayı geçici olarak kapat
+        qs("html").scrollTop = currentScrollPosition; // Sabit konumda tut
+
+
+        // Belirli bir süre sonra kaydırmayı yeniden aç
+        setTimeout(() => {
+            qs("html").style.overflowY = 'auto'; // Kaydırmayı yeniden aç
+        isPaused = false; // Duraklamayı kapat
+        // hasSnapped[index] = true; // Böylece kullanıcı geriye kaydırırsa tekrar çalışır
+        }, scrollPause);
+    }
+
+    // Eğer pozisyon snap konumunu geçmişse ve isPaused değilse hasSnapped'i sıfırla
+    if ((window.scrollY) < snapValue && !isPaused) {
+        hasSnapped[index] = false; // Böylece kullanıcı geriye kaydırırsa tekrar çalışır
+    }
+}
+
 window.addEventListener("scroll", (el) => {
 
     el.preventDefault();
@@ -46,13 +78,17 @@ window.addEventListener("scroll", (el) => {
         qs("#body").classList.remove("dark");        
     }
 
-    if (scrollVal > 3970) {
+    if(scrollVal > 4150){
+        qs("#part_5_progress_bar").style.height = "90%";
+    }else if (scrollVal > 4050) {
+        qs("#part_5_progress_bar").style.height = "75%";
+    }else if (scrollVal > 3950) {
         qs("#part_5_progress_bar").style.height = "60%";
-    }else if(scrollVal > 3870){
+    }else if(scrollVal > 3850){
         qs("#part_5_progress_bar").style.height = "45%";
-    }else if(scrollVal > 3770){
+    }else if(scrollVal > 3750){
         qs("#part_5_progress_bar").style.height = "30%";
-    }else if(scrollVal > 3670){
+    }else if(scrollVal > 3650){
         qs("#part_5_progress_bar").style.height = "15%";
     }else{
         qs("#part_5_progress_bar").style.height = "0%";
@@ -60,7 +96,11 @@ window.addEventListener("scroll", (el) => {
     
 
    
-
+    if (!isPaused) { // Eğer duraklama yoksa
+        snapValues.forEach((snapValue, index) => {
+        snapScroll(snapValue, index);
+        });
+    }
 
 
 });

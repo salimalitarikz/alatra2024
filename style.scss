@@ -691,6 +691,13 @@ main{
                 background-color: #4b4b4b;
                 border-radius: .5rem;
                 @extend .grained;
+                overflow: hidden;
+
+                >img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
             }
         }
 
@@ -831,17 +838,17 @@ main{
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        text-align: right;
 
         >#part_6_banner{
             display: flex;
             flex-direction: column;
             gap: 2rem;
             >h1{
-                font-size: 1.3rem;
+                font-size: 1.1rem;
                 color: $gray_normal;
                 font-weight: 600;
-                padding-right: 2rem;
-            }
+            } 
     
             >h2{
                 font-size: 1.1rem;

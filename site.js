@@ -171,6 +171,6 @@ function changeLanguage(params) {
     var elements = document.querySelectorAll('[data-en]');
 
     for (var i = 0; i < elements.length; i++) {
-        elements[i].innerText = elements[i].dataset.en;
+        elements[i].innerHTML = elements[i].dataset.en;
     }
 }

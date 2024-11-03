@@ -433,6 +433,13 @@ main > #main_part_4 > .part_4_box > .part_4_box_right {
   height: 100%;
   background-color: #4b4b4b;
   border-radius: 0.5rem;
+  overflow: hidden;
+}
+main > #main_part_4 > .part_4_box > .part_4_box_right > img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 main > #main_part_4 > .part_4_box:nth-child(odd) {
   align-items: flex-end;
@@ -541,6 +548,7 @@ main > #main_part_6 {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  text-align: right;
 }
 main > #main_part_6 > #part_6_banner {
   display: flex;
@@ -548,10 +556,9 @@ main > #main_part_6 > #part_6_banner {
   gap: 2rem;
 }
 main > #main_part_6 > #part_6_banner > h1 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #8f8f8f;
   font-weight: 600;
-  padding-right: 2rem;
 }
 main > #main_part_6 > #part_6_banner > h2 {
   font-size: 1.1rem;

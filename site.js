@@ -85,15 +85,15 @@ window.addEventListener("scroll", (el) => {
 
     // question appears then becomes white colored
     if (scrollVal > 1000) {
-        qs("#body").classList.add("dark");
+        qs("#main").classList.add("dark");
     }else{
-        qs("#body").classList.remove("dark");        
+        qs("#main").classList.remove("dark");        
     }
     
     if (scrollVal > 4500) {
-        qs("#body").classList.add("white");
+        qs("#main").classList.add("white");
     }else{
-        qs("#body").classList.remove("white");        
+        qs("#main").classList.remove("white");        
     }
     
 

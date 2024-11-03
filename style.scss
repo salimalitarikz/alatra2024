@@ -78,66 +78,103 @@ body{
     position: relative;
     overflow-x: hidden;
 
-    &.dark{
-        transition: 1s;
-        background-color: $gray_dark;
+    // &.dark{
+    //     transition: 1s;
+    //     background-color: $gray_dark;
 
-        *{
-            // color: $gray_light;
-        }
+    //     *{
+    //         // color: $gray_light;
+    //     }
         
 
-        >nav{
-            color: $gray_light;
-            >#nav_left{
-                >h1{
-                    font-weight: 600;
-                }
-            }
+    //     >nav{
+    //         color: $gray_light;
+    //         >#nav_left{
+    //             >h1{
+    //                 font-weight: 600;
+    //             }
+    //         }
 
-            >#menu_button{
-                background-color: $gray_light;
+    //         >#menu_button{
+    //             background-color: $gray_light;
 
-                >span{
-                    background-color: $gray_dark;
-                }
-            }
-        }
+    //             >span{
+    //                 background-color: $gray_dark;
+    //             }
+    //         }
+    //     }
 
-        #main_part_2,#main_part_3{
-            color: $gray_light;
-        }
-    }
+    //     #main_part_2,#main_part_3{
+    //         color: $gray_light;
+    //     }
+    // }
 
-    &.white{
-        transition: 1s;
-        background-color: $gray_light;
+    // &.white{
+    //     transition: 1s;
+    //     background-color: $gray_light;
 
         
 
-        >nav{
-            color: $gray_light;
-            >#nav_left{
-                >h1{
-                    font-weight: 600;
-                }
-            }
+    //     >nav{
+    //         color: $gray_light;
+    //         >#nav_left{
+    //             >h1{
+    //                 font-weight: 600;
+    //             }
+    //         }
 
-            >#menu_button{
-                background-color: $gray_light;
+    //         >#menu_button{
+    //             background-color: $gray_light;
 
-                >span{
-                    background-color: $gray_dark;
-                }
-            }
-        }
+    //             >span{
+    //                 background-color: $gray_dark;
+    //             }
+    //         }
+    //     }
 
-        #part_5_content>div{
-            color: $gray_dark !important;
-        }
-    }
+    //     #part_5_content>div{
+    //         color: $gray_dark !important;
+    //     }
+    // }
 
     
+    &:has(.dark){
+        >nav{
+            color: $gray_light;
+            >#nav_left{
+                >h1{
+                    font-weight: 600;
+                }
+            }
+
+            >#menu_button{
+                background-color: $gray_light;
+
+                >span{
+                    background-color: $gray_dark;
+                }
+            }
+        }
+    }
+
+    &:has(.white){
+        >nav{
+            color: $gray_dark;
+            >#nav_left{
+                >h1{
+                    font-weight: 600;
+                }
+            }
+
+            >#menu_button{
+                background-color: $gray_light;
+
+                >span{
+                    background-color: $gray_dark;
+                }
+            }
+        }
+    }
 }
 
 
@@ -353,17 +390,49 @@ menu{
 }
 
 main{
-    width: calc(100% - 1rem);
+    // width: calc(100% - 1rem);
+    width: 100%;
     position: relative;
-    left: .5rem;
+    left: 0;
     // padding-top: 2rem;
     margin-top: 1rem;
-    padding: .2rem;
+    padding: .5rem;
     transition-delay: .3s !important;
     transition: .6s;
     display: flex;
     flex-direction: column;
+    padding-bottom: 20vh;
     gap: 1rem;
+
+    &.dark{
+        transition: 1s;
+        background-color: $gray_dark;
+
+        *{
+            // color: $gray_light;
+        }
+        
+
+        
+
+        #main_part_2,#main_part_3{
+            color: $gray_light;
+        }
+    }
+
+    &.white{
+        transition: 1s;
+        background-color: $gray_light;
+
+        
+
+       
+
+        #part_5_content>div{
+            color: $gray_dark !important;
+        }
+    }
+
 
     &.main_disabled{
         // transition: .5s;
@@ -895,7 +964,7 @@ main{
 
 
 footer{
-    margin-top: 20vh;
+    // margin-top: 20vh;
     height: 70vh;
     width: 100%;
     background-color: $black;

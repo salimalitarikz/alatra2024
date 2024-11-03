@@ -214,6 +214,10 @@ menu > #menu_header > button {
   justify-content: center;
   line-height: 0;
 }
+menu > #menu_header > button:nth-last-child(2) {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
 menu > #menu_links {
   width: 100%;
   display: flex;
@@ -340,6 +344,7 @@ main > #main_part_2 > div > div > div > div:nth-child(1) {
 main > #main_part_2 > div > div > div > div:nth-child(1) > h2 {
   text-transform: uppercase;
   font-size: 1.4rem;
+  text-wrap: nowrap;
 }
 main > #main_part_2 > div > div > div > div:nth-child(2) {
   height: 100%;
@@ -451,10 +456,9 @@ main > #main_part_4 > #part_4_footer > h3 {
   color: #d4d4d4;
   font-size: 1.4rem;
   font-weight: 300;
-}
-main > #main_part_4 > #part_4_footer > h3 > span {
-  -webkit-text-decoration: underline 2px #ff3e00;
-          text-decoration: underline 2px #ff3e00;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 main > #main_part_5 {
   margin-top: 15vh;
@@ -471,7 +475,7 @@ main > #main_part_5 > #part_5_content {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 70vh;
+  height: 100vh;
   padding-left: 1rem;
 }
 main > #main_part_5 > #part_5_content > #part_5_progress_bar {
@@ -484,6 +488,7 @@ main > #main_part_5 > #part_5_content > #part_5_progress_bar {
   transition: 1s ease;
   border-radius: 2px;
   filter: unset;
+  padding-bottom: 1.1rem;
 }
 main > #main_part_5 > #part_5_content > #part_5_progress_bar > span {
   display: inline-block;
@@ -493,10 +498,10 @@ main > #main_part_5 > #part_5_content > #part_5_progress_bar > span {
   border-bottom-right-radius: 40%;
   position: absolute;
   left: 0;
-  bottom: -1rem;
+  bottom: 0.1rem;
   background-color: #ff3e00;
   z-index: -2;
-  box-shadow: 0 0 5px #ff3e00;
+  box-shadow: 0 0 10px #ff3e00;
 }
 main > #main_part_5 > #part_5_content > div {
   height: 15%;

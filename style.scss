@@ -276,6 +276,11 @@ menu{
             align-items: center;
             justify-content: center;
             line-height: 0;
+
+            &:nth-last-child(2){
+                font-size: 1.1rem;
+                font-weight: 400;
+            }
         }
     }
 
@@ -501,6 +506,8 @@ main{
                             @extend .font_2;
                             text-transform: uppercase;
                             font-size: 1.4rem;
+                            // overflow: hidden;
+                            text-wrap: nowrap;
                         }
                     }
 
@@ -710,10 +717,11 @@ main{
                 color: $gray_light;
                 font-size: 1.4rem;
                 font-weight: 300;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
                 
-                >span{
-                    text-decoration: underline 2px $orange;
-                }
+                
             }
         }
 
@@ -737,7 +745,7 @@ main{
             position: relative;
             display: flex;
             flex-direction: column;
-            height: 70vh;
+            height: 100vh;
             // gap: 15%;
             padding-left: 1rem;
 
@@ -751,6 +759,7 @@ main{
                 transition: 1s ease;
                 border-radius: 2px;
                 filter: unset;
+                padding-bottom: 1.1rem;
 
                 >span{
                     display: inline-block;
@@ -760,11 +769,11 @@ main{
                     border-bottom-right-radius: 40%;
                     position: absolute;
                     left: 0;
-                    bottom: -1rem;
+                    bottom: .1rem;
                     background-color: $orange;
                     z-index: -2;
                     @extend .grained;
-                    box-shadow: 0 0 5px $orange;
+                    box-shadow: 0 0 10px $orange;
                     
 
                 }

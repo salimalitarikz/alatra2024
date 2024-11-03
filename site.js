@@ -7,6 +7,7 @@ function qs(query) {
 
 
 
+
 function menuToggle() {
     let menu = document.getElementById("menu");
     let main = document.getElementById("main");
@@ -164,3 +165,12 @@ window.addEventListener("scroll", (el) => {
 
 
 });
+
+
+function changeLanguage(params) {
+    var elements = document.querySelectorAll('[data-en]');
+
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].innerText = elements[i].dataset.en;
+    }
+}

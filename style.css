@@ -86,7 +86,7 @@ body > #load_page {
     -webkit-backdrop-filter: blur(100px);
             backdrop-filter: blur(100px);
   }
-  50% {
+  70% {
     -webkit-backdrop-filter: blur(100px);
             backdrop-filter: blur(100px);
   }
@@ -116,13 +116,23 @@ body > #load_page > #load_name {
 body > #load_page > #load_name > div {
   height: 1em;
   overflow: hidden;
-  animation: load_name_an_1 0.5s linear forwards;
+  animation: load_name_an_1 2.4s linear forwards;
 }
 @keyframes load_name_an_1 {
-  to {
+  25% {
     transform: translateY(0);
     filter: blur(0px);
     opacity: 1;
+  }
+  65% {
+    transform: translateY(0);
+    filter: blur(0px);
+    opacity: 1;
+  }
+  85% {
+    transform: translateY(0);
+    filter: blur(5px);
+    opacity: 0;
   }
 }
 body > #load_page > #load_name > div:nth-child(1) {
@@ -134,7 +144,7 @@ body > #load_page > #load_name > div:nth-child(2) {
   opacity: 0;
   filter: blur(5px);
   transform: translateY(30%);
-  animation-delay: 0.5s !important;
+  animation-delay: 0.4s !important;
 }
 body > #load_page > #load_slogan {
   display: flex;
@@ -149,16 +159,24 @@ body > #load_page > #load_slogan > span {
   background-color: #ff3e00;
   opacity: 0;
   animation-delay: 1.4s !important;
-  animation: load_slogan_an_2 0.6s linear forwards;
-}
-@keyframes load_slogan_an_2 {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 body > #load_page > #load_slogan h4 {
   font-weight: 400;
+  animation: load_slogan_an_2 2.4s linear forwards;
+}
+@keyframes load_slogan_an_2 {
+  25% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  95% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
 }
 body > #load_page > #load_slogan h4 > span {
   display: inline-block;
@@ -855,7 +873,7 @@ footer > #footer_footer > span {
   height: 330px;
 }
 .ct * {
-  animation-delay: 3s !important;
+  animation-delay: 3.2s !important;
 }
 
 .circle-large {

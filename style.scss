@@ -105,7 +105,7 @@ body{
             0%{
                 backdrop-filter: blur(100px);
             }
-            50%{
+            70%{
                 backdrop-filter: blur(100px);
             }
             95%{
@@ -136,11 +136,13 @@ body{
             >div{
                 height: 1em;
                 overflow: hidden;
-                animation: load_name_an_1 .5s linear forwards;
+                animation: load_name_an_1 2.4s linear forwards;
                 
                 // transition-delay: .2s;
                 @keyframes load_name_an_1 {
-                    to{transform: translateY(0);filter: blur(0px);opacity: 1;}
+                    25%{transform: translateY(0);filter: blur(0px);opacity: 1;}
+                    65%{transform: translateY(0);filter: blur(0px);opacity: 1;}
+                    85%{transform: translateY(0);filter: blur(5px);opacity: 0;}
                     
                 }
 
@@ -154,7 +156,7 @@ body{
                     opacity: 0;
                     filter: blur(5px);
                    transform: translateY(30%);
-                   animation-delay: .5s !important;
+                   animation-delay: .4s !important;
                 }
             }
         }
@@ -173,10 +175,7 @@ body{
                 background-color: $orange;
                 opacity: 0;
                 animation-delay: 1.4s !important;
-                animation: load_slogan_an_2 .6s linear forwards;
-                @keyframes load_slogan_an_2 {
-                    to{opacity: 1;transform: translateX(0);}
-                }
+                
 
          
 
@@ -184,6 +183,13 @@ body{
             }
             h4{
                 font-weight: 400;
+
+                animation: load_slogan_an_2 2.4s linear forwards;
+                @keyframes load_slogan_an_2 {
+                    25%{opacity: 1;transform: translateX(0);}
+                    95%{opacity: 1;transform: translateX(0);}
+                    100%{opacity: 0;transform: translateX(0);}
+                }
 
                 >span{
                     display: inline-block;
@@ -1325,7 +1331,7 @@ mix-blend-mode: difference;
     height: $width;
 
     *{
-        animation-delay: 3s !important;
+        animation-delay: 3.2s !important;
     }
   }
   

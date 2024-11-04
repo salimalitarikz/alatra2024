@@ -988,12 +988,12 @@ main{
             position: relative;
             display: flex;
             flex-direction: column;
-            height: 100vh;
+            // height: 60vh;
             // gap: 15%;
             padding-left: 1rem;
 
             >#part_5_progress_bar{
-                height: 0%;
+                height: 10%;
                 width: 2px;
                 background-color: $orange;
                 position: absolute;
@@ -1002,7 +1002,6 @@ main{
                 transition: 1s ease;
                 border-radius: 2px;
                 filter: unset;
-                padding-bottom: 1.1rem;
 
                 >span{
                     display: inline-block;
@@ -1012,7 +1011,7 @@ main{
                     border-bottom-right-radius: 40%;
                     position: absolute;
                     left: 0;
-                    bottom: -.9rem;
+                    bottom: -1rem;
                     background-color: $orange;
                     z-index: 2;
                     @extend .grained;
@@ -1024,7 +1023,8 @@ main{
 
             >div{
                 
-                height: 10rem;
+                height: 10vh;
+                // max-height: 10em;
                 width: 100%;
                 display: flex;
                 justify-content: flex-start;

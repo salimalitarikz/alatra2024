@@ -641,11 +641,10 @@ main > #main_part_5 > #part_5_content {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   padding-left: 1rem;
 }
 main > #main_part_5 > #part_5_content > #part_5_progress_bar {
-  height: 0%;
+  height: 10%;
   width: 2px;
   background-color: #ff3e00;
   position: absolute;
@@ -654,7 +653,6 @@ main > #main_part_5 > #part_5_content > #part_5_progress_bar {
   transition: 1s ease;
   border-radius: 2px;
   filter: unset;
-  padding-bottom: 1.1rem;
 }
 main > #main_part_5 > #part_5_content > #part_5_progress_bar > span {
   display: inline-block;
@@ -664,13 +662,13 @@ main > #main_part_5 > #part_5_content > #part_5_progress_bar > span {
   border-bottom-right-radius: 40%;
   position: absolute;
   left: 0;
-  bottom: -0.9rem;
+  bottom: -1rem;
   background-color: #ff3e00;
   z-index: 2;
   box-shadow: 0 0 10px #ff3e00;
 }
 main > #main_part_5 > #part_5_content > div {
-  height: 10rem;
+  height: 10vh;
   width: 100%;
   display: flex;
   justify-content: flex-start;

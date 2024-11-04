@@ -103,7 +103,7 @@ window.addEventListener("scroll", (el) => {
     
 
     if(scrollVal > 4150){
-        qs("#part_5_progress_bar").style.height = "49.1rem";
+        qs("#part_5_progress_bar").style.height = "65vh";
         qs("#part_5_c_6").classList.add("active");
         qs("#part_5_c_5").classList.add("active");
         qs("#part_5_c_4").classList.add("active");
@@ -111,7 +111,7 @@ window.addEventListener("scroll", (el) => {
         qs("#part_5_c_2").classList.add("active");
         qs("#part_5_c_1").classList.add("active");
     }else if (scrollVal > 4050) {
-        qs("#part_5_progress_bar").style.height = "41.5rem";
+        qs("#part_5_progress_bar").style.height = "55vh";
         qs("#part_5_c_6").classList.remove("active");
         qs("#part_5_c_5").classList.add("active");
         qs("#part_5_c_4").classList.add("active");
@@ -119,29 +119,29 @@ window.addEventListener("scroll", (el) => {
         qs("#part_5_c_2").classList.add("active");
         qs("#part_5_c_1").classList.add("active");
     }else if (scrollVal > 3950) {
-        qs("#part_5_progress_bar").style.height = "34rem";
+        qs("#part_5_progress_bar").style.height = "45vh";
         qs("#part_5_c_5").classList.remove("active");
         qs("#part_5_c_4").classList.add("active");
         qs("#part_5_c_3").classList.add("active");
         qs("#part_5_c_2").classList.add("active");
         qs("#part_5_c_1").classList.add("active");
     }else if(scrollVal > 3850){
-        qs("#part_5_progress_bar").style.height = "26.4rem";
+        qs("#part_5_progress_bar").style.height = "35vh";
         qs("#part_5_c_4").classList.remove("active");
         qs("#part_5_c_3").classList.add("active");
         qs("#part_5_c_2").classList.add("active");
         qs("#part_5_c_1").classList.add("active");
     }else if(scrollVal > 3750){
-        qs("#part_5_progress_bar").style.height = "18.9rem";
+        qs("#part_5_progress_bar").style.height = "25vh";
         qs("#part_5_c_3").classList.remove("active");
         qs("#part_5_c_2").classList.add("active");
         qs("#part_5_c_1").classList.add("active");
     }else if(scrollVal > 3650){
-        qs("#part_5_progress_bar").style.height = "11.4rem";
+        qs("#part_5_progress_bar").style.height = "15vh";
         qs("#part_5_c_2").classList.remove("active");
         qs("#part_5_c_1").classList.add("active");
     }else{
-        qs("#part_5_progress_bar").style.height = "3.9rem";
+        qs("#part_5_progress_bar").style.height = "5vh";
         qs("#part_5_c_1").classList.remove("active");
     }
     

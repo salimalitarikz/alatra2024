@@ -78,6 +78,72 @@ body{
     position: relative;
     overflow-x: hidden;
 
+   
+
+
+    &.hey{
+
+        *{
+            filter: blur(30px);
+
+            &#globe_wrapper *{
+                filter: unset !important;
+            }
+        }
+    }
+
+    >#load_page{
+        @extend .grained;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+        backdrop-filter: blur(100px);
+        animation: load_out 3s ease-in-out forwards;
+        
+        @keyframes load_out {
+            0%{
+                backdrop-filter: blur(100px);
+            }
+            70%{
+                backdrop-filter: blur(100px);
+            }
+            95%{
+                backdrop-filter: blur(0);
+            }
+            99%{
+                backdrop-filter: blur(0);
+                opacity: 0;
+            }
+            100%{
+                backdrop-filter: blur(0);
+                opacity: 0;
+                display: none;
+            }
+            
+            
+        }
+        
+        &,*{
+            filter: unset;
+        }
+
+        >h1{
+            color: $gray_dark;
+        }
+
+
+        
+    }
+
+
+    
+
     // &.dark{
     //     transition: 1s;
     //     background-color: $gray_dark;
@@ -1120,9 +1186,12 @@ mix-blend-mode: difference;
         // bottom: -5rem;
         // right: -15rem;
 
+        width: 100%;
+        height: 100%;
+
         position: absolute;
         left: 50%;
-        transform: translateX(-50%) scale(.8);
+        transform: translateX(-50%) translateY(-5%) scale(.8);
 
         // box-shadow: 0 0 100px $orange;
         // background-color: $orange;
@@ -1158,62 +1227,256 @@ mix-blend-mode: difference;
 // golden ratio
 
   
- 
+
   
   $frame:$gray_normal;
   $circles: #1f1f1f;
- 
-.ct *::before,.ct *::after{content:'';position:absolute;}
 
-.ct{margin:0 auto;position:relative;width:300px;height:300px}
 
-/*Blue big circle and it's diameter coordinates*/
-.circle-large{width:300px;height:300px;position:relative;border-radius:100%;border:2px solid $circles}
-.circle-large::before{background:$circles;top:50%;width:299px;height:1px;}
-.circle-large::after{background:$circles;left:50%;top:0;width:1px;height:299px;}
-
-.circle-large{
+  $frame: $gray_normal;
+  $circles: #1f1f1f;
+//   $orange: #FFA500; // Orange rengin eksik olduğu varsayıldı
+  
+  $width: 330px; // Ana boyut değişkeni
+  
+  // Eleman boyutları width'e göre hesaplanacak
+  $circle-large-size: $width;
+  $circle-small-size: $width * 0.4933; // 148 / 300
+  $bullseye-size: $width * 0.0367; // 11 / 300
+  $ellipse-width: $width * 1.5; // 450 / 300
+  $ellipse-height: $width * 0.5; // 150 / 300
+  
+  .ct *::before,
+  .ct *::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .ct {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: $width;
+    height: $width;
 
     *{
-        transition: .5s !important;
-        opacity: 1;
+        animation-delay: 3s !important;
     }
+  }
+  
+  // Blue big circle and its diameter coordinates
+  .circle-large {
+    width: $circle-large-size;
+    height: $circle-large-size;
+    position: relative;
+    border-radius: 100%;
+    border: 2px solid $circles;
+  
+    &::before {
+      background: $circles;
+      top: 50%;
+      width: $circle-large-size - 1px;
+      height: 1px;
+    }
+  
+    &::after {
+      background: $circles;
+      left: 50%;
+      top: 0;
+      width: 1px;
+      height: $circle-large-size - 1px;
+    }
+  
+    * {
+      transition: 0.5s !important;
+      opacity: 1;
+    }
+  
+    &.passive * {
+      opacity: 0;
+    }
+  }
+  
+  // Smaller, orange, centered circle
+  .circle-small {
+    width: $circle-small-size;
+    height: $circle-small-size;
+    border-radius: 100%;
+    box-shadow: 0 0 0 1px $circles;
+    position: absolute;
+    top: ($width - $circle-small-size) / 2;
+    left: ($width - $circle-small-size) / 2;
+    z-index: 2;
+    animation: counterRotate 8s infinite linear;
+  }
+  
+  // Tiny orange circle that spins on circle-small's side
+  .bullseye {
+    width: $bullseye-size;
+    height: $bullseye-size;
+    border: 2px solid $orange;
+    border-radius: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -($bullseye-size / 2);
+    margin-top: -($bullseye-size / 2);
+    animation: rotate 4s infinite linear;
+  
+    &::before {
+      width: $circle-small-size;
+      height: $circle-small-size;
+      left: -($circle-small-size / 2);
+      top: -($circle-small-size / 2);
+      border-radius: 100%;
+      border: 2px solid $orange;
+    }
+  }
+  
+  .axis {
+    position: absolute;
+    background: $circles;
+    border: 0;
+    z-index: 2;
+    margin: 0;
+  
+    &.horizontal {
+      top: 4px;
+      left: -($width / 2 - 4px);
+      width: $width;
+      height: 2px;
+    }
+  
+    &.vertical {
+      top: -($width / 2 - 4px);
+      left: 4px;
+      height: $width;
+      width: 2px;
+    }
+  
+    &::before,
+    &::after {
+      width: 9px;
+      height: 9px;
+      background: $orange;
+      border-radius: 100%;
+    }
+  
+    &::before {
+      top: -4px;
+      left: -4px;
+    }
+  
+    &::after {
+      bottom: -4px;
+      right: -4px;
+    }
+  }
+  
+  .bullet {
+    width: $bullseye-size;
+    height: $bullseye-size;
+    border-radius: 100%;
+    border: 1px solid $frame;
+    position: absolute;
+    top: $width * 0.23; // 69 / 300
+    left: -($bullseye-size / 2);
+  
+    &:nth-child(2) {
+      top: $width * 0.73; // 219 / 300
+    }
+  }
+  
+  // Orange ellipses
+  .ellipse {
+    border: 2px solid $frame;
+    position: absolute;
+    border-radius: 100%;
+    width: $ellipse-width;
+    height: $ellipse-height;
+    top: ($width - $ellipse-height) / 2;
+    left: -($ellipse-width - $width) / 2;
+  }
+  
+  .ellipse:nth-child(3) {
+    transform: rotate(45deg);
+  }
+  .ellipse:nth-child(4) {
+    transform: rotate(90deg);
+  }
+  .ellipse:nth-child(5) {
+    transform: rotate(135deg);
+  }
+  
+  @keyframes counterRotate {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
 
-    &.passive{
-        *{
-            opacity: 0;
-        }
-    }
+
+
+
+
+
+ 
+// .ct *::before,.ct *::after{content:'';position:absolute;}
+
+// .ct{margin:0 auto;position:relative;width:300px;height:300px}
+
+// /*Blue big circle and it's diameter coordinates*/
+// .circle-large{width:300px;height:300px;position:relative;border-radius:100%;border:2px solid $circles}
+// .circle-large::before{background:$circles;top:50%;width:299px;height:1px;}
+// .circle-large::after{background:$circles;left:50%;top:0;width:1px;height:299px;}
+
+// .circle-large{
+
+//     *{
+//         transition: .5s !important;
+//         opacity: 1;
+//     }
+
+//     &.passive{
+//         *{
+//             opacity: 0;
+//         }
+//     }
     
-}
+// }
 
-/*Smaller, orange, centered circle*/
-.circle-small{width:148px;height:148px;border-radius:100%;box-shadow:0 0 0 1px $circles;position:absolute;top:75px;left:75px;z-index:2;
-animation:counterRotate 8s infinite linear;}
+// /*Smaller, orange, centered circle*/
+// .circle-small{width:148px;height:148px;border-radius:100%;box-shadow:0 0 0 1px $circles;position:absolute;top:75px;left:75px;z-index:2;
+// animation:counterRotate 8s infinite linear;}
 
-/*Tiny orange circle that spins on circle-small's side*/
-.bullseye{width:11px;height:11px;border:2px solid $orange;border-radius:100%;position:absolute;left:50%;margin-left:-5px;margin-top:-6px;
-animation:rotate 4s infinite linear}
-.bullseye::before{width:148px;height:148px;left:-71.5px;top:-71.5px;border-radius:100%;border:2px solid $orange;}
+// /*Tiny orange circle that spins on circle-small's side*/
+// .bullseye{width:11px;height:11px;border:2px solid $orange;border-radius:100%;position:absolute;left:50%;margin-left:-5px;margin-top:-6px;
+// animation:rotate 4s infinite linear}
+// .bullseye::before{width:148px;height:148px;left:-71.5px;top:-71.5px;border-radius:100%;border:2px solid $orange;}
 
-  .axis{position:absolute;background:$circles;border:0;z-index:2;margin:0}
-  .axis.horizontal{top:4px;left:-145px;width:300px;height:2px}
-  .axis.vertical{top:-145px;left:4px;height:300px;width:2px}
+//   .axis{position:absolute;background:$circles;border:0;z-index:2;margin:0}
+//   .axis.horizontal{top:4px;left:-145px;width:300px;height:2px}
+//   .axis.vertical{top:-145px;left:4px;height:300px;width:2px}
 
-  .axis::before,
-  .axis::after{width:9px;height:9px;background:$orange;border-radius:100%}
-  .axis::before{top:-4px;left:-4px;}
-  .axis::after{bottom:-4px;right:-4px}
+//   .axis::before,
+//   .axis::after{width:9px;height:9px;background:$orange;border-radius:100%}
+//   .axis::before{top:-4px;left:-4px;}
+//   .axis::after{bottom:-4px;right:-4px}
 
-  .bullet{width:11px;height:11px;border-radius:100%;border:1px solid $frame;position:absolute;top:69px;left:-5px}
-  .bullet:nth-child(2){top:219px}
+//   .bullet{width:11px;height:11px;border-radius:100%;border:1px solid $frame;position:absolute;top:69px;left:-5px}
+//   .bullet:nth-child(2){top:219px}
 
-/*Orange ellipses*/
+// /*Orange ellipses*/
 
-.ellipse{border:2px solid $frame;position:absolute;border-radius:100%;width:450px;height:150px;top:75px;left:-75px;}
-.ellipse:nth-child(3){transform:rotate(45deg)}
-.ellipse:nth-child(4){transform:rotate(90deg)}
-.ellipse:nth-child(5){transform:rotate(135deg)}
+// .ellipse{border:2px solid $frame;position:absolute;border-radius:100%;width:450px;height:150px;top:75px;left:-75px;}
+// .ellipse:nth-child(3){transform:rotate(45deg)}
+// .ellipse:nth-child(4){transform:rotate(90deg)}
+// .ellipse:nth-child(5){transform:rotate(135deg)}
 
-@keyframes counterRotate { to{transform: rotate(-360deg)} }
-@keyframes rotate { to{transform: rotate(360deg)} }
+// @keyframes counterRotate { to{transform: rotate(-360deg)} }
+// @keyframes rotate { to{transform: rotate(360deg)} }

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-.grained, footer > span, footer, main > #main_part_5 > #part_5_content > #part_5_progress_bar > span, main > #main_part_4 > .part_4_box > .part_4_box_right, body > #load_page {
+.grained, footer > span, footer, main > #main_part_5 > #part_5_content > #part_5_progress_bar > span, main > #main_part_4 > .part_4_box > .part_4_box_right, main, body > #load_page {
   background-image: url(/ui/grain.png);
 }
 
@@ -57,7 +57,7 @@ html {
 }
 
 body {
-  background-color: #d4d4d4;
+  background-color: #c1c1c1;
   background-image: url(/ui/grain.png);
   min-height: 250vh;
   position: relative;
@@ -203,13 +203,13 @@ body > #load_page > #load_slogan h4 > span:nth-child(4) {
   animation-delay: 1.4s;
 }
 body:has(.dark) > nav {
-  color: #d4d4d4;
+  color: #c1c1c1;
 }
 body:has(.dark) > nav > #nav_left > h1 {
   font-weight: 600;
 }
 body:has(.dark) > nav > #menu_button {
-  background-color: #d4d4d4;
+  background-color: #c1c1c1;
 }
 body:has(.dark) > nav > #menu_button > span {
   background-color: #222222;
@@ -221,7 +221,7 @@ body:has(.white) > nav > #nav_left > h1 {
   font-weight: 600;
 }
 body:has(.white) > nav > #menu_button {
-  background-color: #d4d4d4;
+  background-color: #c1c1c1;
 }
 body:has(.white) > nav > #menu_button > span {
   background-color: #222222;
@@ -301,7 +301,7 @@ nav > #menu_button > span {
   width: 100%;
   height: 3px;
   border-radius: 1px;
-  background-color: #d4d4d4;
+  background-color: #c1c1c1;
 }
 nav > #menu_button > span:nth-last-child(1) {
   width: 70%;
@@ -325,7 +325,6 @@ menu {
   gap: 4rem;
   transition: 0.5s ease;
   padding: 0.4rem;
-  background: rgba(0, 0, 0, 0.5);
   background-image: url(/ui/grain.png);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -414,11 +413,11 @@ main.dark {
   background-color: #222222;
 }
 main.dark #main_part_2, main.dark #main_part_3 {
-  color: #d4d4d4;
+  color: #c1c1c1;
 }
 main.white {
   transition: 1s;
-  background-color: #d4d4d4;
+  background-color: #c1c1c1;
 }
 main.white #part_5_content > div {
   color: #222222 !important;
@@ -554,7 +553,7 @@ main > #main_part_4 > .part_4_box {
   height: 25rem;
   display: flex;
   gap: 0.5rem;
-  color: #d4d4d4;
+  color: #c1c1c1;
 }
 main > #main_part_4 > .part_4_box > .part_4_box_left {
   width: 45%;
@@ -619,7 +618,7 @@ main > #main_part_4 > #part_4_footer > span {
 }
 main > #main_part_4 > #part_4_footer > h3 {
   width: 90%;
-  color: #d4d4d4;
+  color: #c1c1c1;
   font-size: 1.4rem;
   font-weight: 300;
   display: flex;
@@ -673,7 +672,7 @@ main > #main_part_5 > #part_5_content > div {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: #d4d4d4;
+  color: #c1c1c1;
   gap: 1rem;
   filter: blur(50px);
   transition: 1s;
@@ -697,7 +696,7 @@ main > #main_part_5 > #part_5_content > div:nth-child(1) > h4 {
   font-weight: 500 !important;
 }
 main > #main_part_5 > #part_5_content > div:nth-child(1) > span {
-  color: #d4d4d4;
+  color: #c1c1c1;
 }
 main > #main_part_6 {
   display: flex;
@@ -725,7 +724,7 @@ footer {
   height: 70vh;
   width: 100%;
   background-color: #0c0c0c;
-  color: #d4d4d4;
+  color: #c1c1c1;
   display: flex;
   overflow: hidden;
   flex-direction: column;
@@ -767,7 +766,7 @@ footer > #footer_content > div {
 }
 footer > #footer_footer {
   font-size: 6.2rem;
-  color: #d4d4d4;
+  color: #c1c1c1;
   font-weight: 900;
   display: flex;
   flex-direction: column;

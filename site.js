@@ -19,6 +19,7 @@ function menuToggle() {
 
     menu.classList.toggle("menu_active");
     main.classList.toggle("main_disabled");
+    qs("#body").classList.toggle("dark");
 }
 
 

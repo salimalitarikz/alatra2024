@@ -4,7 +4,7 @@
 //root
 
 $white:#f7f7f7;
-$gray_light:#d4d4d4;
+$gray_light:#c1c1c1;
 $gray_normal:#8f8f8f;
 $gray_dark:#222222;
 $orange:#ff3e00;
@@ -77,6 +77,14 @@ body{
     min-height: 250vh;
     position: relative;
     overflow-x: hidden;
+    // transition: 1s;
+    // transition-delay: 1s !important;
+
+    // &.dark{
+    //     transition-delay: .2s;
+    //     background-color: #1d1d1d
+        
+    // }
 
    
 
@@ -442,7 +450,7 @@ menu{
     transition: .5s ease;
     padding: .4rem;
     // glass effect
-    background: rgba(0, 0, 0, 0.5);
+    // background: rgba(95, 95, 95, 0.5);
     background-image: url(/ui/grain.png);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -540,6 +548,7 @@ main{
     flex-direction: column;
     padding-bottom: 20vh;
     gap: 1rem;
+    @extend .grained;
 
     &.dark{
         transition: 1s;

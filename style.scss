@@ -1012,9 +1012,9 @@ main{
                     border-bottom-right-radius: 40%;
                     position: absolute;
                     left: 0;
-                    bottom: .1rem;
+                    bottom: -.9rem;
                     background-color: $orange;
-                    z-index: -2;
+                    z-index: 2;
                     @extend .grained;
                     box-shadow: 0 0 10px $orange;
                     
@@ -1024,7 +1024,7 @@ main{
 
             >div{
                 
-                height: 15%;
+                height: 10rem;
                 width: 100%;
                 display: flex;
                 justify-content: flex-start;
@@ -1033,6 +1033,10 @@ main{
                 gap: 1rem;
                 filter: blur(50px);
                 transition: 1s;
+
+                >span{
+                    z-index: 3;
+                }
 
                 &.active{
                     filter: unset;
@@ -1048,8 +1052,6 @@ main{
                 }
 
                 &:nth-child(1){
-                    position: absolute;
-                    top: -7.5%;
                     color: $orange;
                     filter: unset;
                     
@@ -1064,7 +1066,7 @@ main{
                 }
 
                 &:nth-child(2){
-                    margin-top: 13%;
+                    // margin-top: 13%;
                 }
             }
         }

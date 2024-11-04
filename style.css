@@ -664,13 +664,13 @@ main > #main_part_5 > #part_5_content > #part_5_progress_bar > span {
   border-bottom-right-radius: 40%;
   position: absolute;
   left: 0;
-  bottom: 0.1rem;
+  bottom: -0.9rem;
   background-color: #ff3e00;
-  z-index: -2;
+  z-index: 2;
   box-shadow: 0 0 10px #ff3e00;
 }
 main > #main_part_5 > #part_5_content > div {
-  height: 15%;
+  height: 10rem;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -679,6 +679,9 @@ main > #main_part_5 > #part_5_content > div {
   gap: 1rem;
   filter: blur(50px);
   transition: 1s;
+}
+main > #main_part_5 > #part_5_content > div > span {
+  z-index: 3;
 }
 main > #main_part_5 > #part_5_content > div.active {
   filter: unset;
@@ -689,8 +692,6 @@ main > #main_part_5 > #part_5_content > div > h4 {
   padding-left: 0.5rem;
 }
 main > #main_part_5 > #part_5_content > div:nth-child(1) {
-  position: absolute;
-  top: -7.5%;
   color: #ff3e00;
   filter: unset;
 }
@@ -699,9 +700,6 @@ main > #main_part_5 > #part_5_content > div:nth-child(1) > h4 {
 }
 main > #main_part_5 > #part_5_content > div:nth-child(1) > span {
   color: #d4d4d4;
-}
-main > #main_part_5 > #part_5_content > div:nth-child(2) {
-  margin-top: 13%;
 }
 main > #main_part_6 {
   display: flex;

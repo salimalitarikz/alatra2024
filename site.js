@@ -5,10 +5,9 @@ function qs(query) {
     
 }
 
-qs("#body").classList.add("hey");
 setTimeout(() => {
-    qs("#body").classList.remove("hey");
-}, 2000);
+    qs("#load_page").style.opacity = "0";
+}, 2400);
 
 
 

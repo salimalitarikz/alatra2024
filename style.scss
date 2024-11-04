@@ -81,16 +81,7 @@ body{
    
 
 
-    &.hey{
 
-        *{
-            filter: blur(30px);
-
-            &#globe_wrapper *{
-                filter: unset !important;
-            }
-        }
-    }
 
     >#load_page{
         @extend .grained;
@@ -102,27 +93,30 @@ body{
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
         z-index: 20;
         backdrop-filter: blur(100px);
+        transition: opacity 1s;
         animation: load_out 3s ease-in-out forwards;
+        padding-bottom: 20vh;
         
         @keyframes load_out {
             0%{
                 backdrop-filter: blur(100px);
             }
-            70%{
+            50%{
                 backdrop-filter: blur(100px);
             }
             95%{
                 backdrop-filter: blur(0);
             }
             99%{
+              
                 backdrop-filter: blur(0);
-                opacity: 0;
             }
             100%{
-                backdrop-filter: blur(0);
-                opacity: 0;
+                backdrop-filter: blur(100);
                 display: none;
             }
             
@@ -133,8 +127,79 @@ body{
             filter: unset;
         }
 
-        >h1{
-            color: $gray_dark;
+        >#load_name{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 2rem;
+
+            >div{
+                height: 1em;
+                overflow: hidden;
+                animation: load_name_an_1 .5s linear forwards;
+                
+                // transition-delay: .2s;
+                @keyframes load_name_an_1 {
+                    to{transform: translateY(0);filter: blur(0px);opacity: 1;}
+                    
+                }
+
+             
+                &:nth-child(1){
+                    opacity: 0;
+                    filter: blur(5px);
+                   transform: translateY(-40%);
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                    filter: blur(5px);
+                   transform: translateY(30%);
+                   animation-delay: .5s !important;
+                }
+            }
+        }
+
+
+        >#load_slogan{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            >span{
+                // display: inline-block;
+                display: none;
+                width: 1rem;
+                height: 3px;
+                background-color: $orange;
+                opacity: 0;
+                animation-delay: 1.4s !important;
+                animation: load_slogan_an_2 .6s linear forwards;
+                @keyframes load_slogan_an_2 {
+                    to{opacity: 1;transform: translateX(0);}
+                }
+
+         
+
+
+            }
+            h4{
+                font-weight: 400;
+
+                >span{
+                    display: inline-block;
+                    opacity: 0;
+                    transform: translateX(-.3rem);
+                    animation: load_slogan_an_1 .2s linear forwards;
+                    @keyframes load_slogan_an_1 {
+                        to{opacity: 1;transform: translateX(0);}
+                    }
+                    
+                    &:nth-child(1){animation-delay: 1.1s;}
+                    &:nth-child(2){animation-delay: 1.2s;}
+                    &:nth-child(3){animation-delay: 1.3s;}
+                    &:nth-child(4){animation-delay: 1.4s;}
+                }
+            }
         }
 
 

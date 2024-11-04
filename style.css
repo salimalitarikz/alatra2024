@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 .grained, footer > span, footer, main > #main_part_5 > #part_5_content > #part_5_progress_bar > span, main > #main_part_4 > .part_4_box > .part_4_box_right, main, body > #load_page {
@@ -40,7 +41,48 @@
   border-radius: 2px;
 }
 
-.font_2, main > #main_part_5 > #part_5_content > div > h4, main > #main_part_5 > #part_5_content > div, main > #main_part_4 > #part_4_footer > h3, main > #main_part_2 > div > div > p, main > #main_part_2 > div > div > div > div:nth-child(1) > h2 {
+.button_filled {
+  position: relative;
+  display: inline-block;
+  padding: 1.7rem 4rem;
+  background-color: rgba(255, 255, 255, 0.6039215686);
+  border: 1px solid #8f8f8f;
+  color: #0c0c0c;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: 0.7s;
+  font-size: 0.9rem;
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+}
+.button_filled::before {
+  content: "";
+  display: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ff3e00;
+  box-shadow: 0 0 10px #ff3e00, 0 0 10px #ff3e00, 0 0 10px #ff3e00, 0 0 10px #ff3e00;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.7s;
+}
+.button_filled:hover {
+  box-shadow: inset 0 0 150px #222222;
+  padding-left: 3.2rem;
+}
+.button_filled:hover::before {
+  box-shadow: 0 0 10px #ff3e00, 0 0 10px #ff3e00;
+  width: 20px;
+  border-radius: 2px;
+}
+
+.font_2, main > #main_part_5 > #part_5_content > div > h4, main > #main_part_5 > #part_5_content > div, main > #main_part_4 > #part_4_footer > h3, main > #main_part_2 > div > div > p, main > #main_part_2 > div > div > div > div:nth-child(1) > h2, .button_filled {
   font-family: "Albert Sans", sans-serif;
 }
 
@@ -57,7 +99,7 @@ html {
 }
 
 body {
-  background-color: #c1c1c1;
+  background-color: #e8e8e8;
   background-image: url(/ui/grain.png);
   min-height: 250vh;
   position: relative;
@@ -203,13 +245,13 @@ body > #load_page > #load_slogan h4 > span:nth-child(4) {
   animation-delay: 1.4s;
 }
 body:has(.dark) > nav {
-  color: #c1c1c1;
+  color: #e8e8e8;
 }
 body:has(.dark) > nav > #nav_left > h1 {
   font-weight: 600;
 }
 body:has(.dark) > nav > #menu_button {
-  background-color: #c1c1c1;
+  background-color: #e8e8e8;
 }
 body:has(.dark) > nav > #menu_button > span {
   background-color: #222222;
@@ -221,7 +263,7 @@ body:has(.white) > nav > #nav_left > h1 {
   font-weight: 600;
 }
 body:has(.white) > nav > #menu_button {
-  background-color: #c1c1c1;
+  background-color: #e8e8e8;
 }
 body:has(.white) > nav > #menu_button > span {
   background-color: #222222;
@@ -301,7 +343,7 @@ nav > #menu_button > span {
   width: 100%;
   height: 3px;
   border-radius: 1px;
-  background-color: #c1c1c1;
+  background-color: #e8e8e8;
 }
 nav > #menu_button > span:nth-last-child(1) {
   width: 70%;
@@ -405,7 +447,6 @@ main {
   transition: 0.6s;
   display: flex;
   flex-direction: column;
-  padding-bottom: 20vh;
   gap: 1rem;
 }
 main.dark {
@@ -413,11 +454,11 @@ main.dark {
   background-color: #222222;
 }
 main.dark #main_part_2, main.dark #main_part_3 {
-  color: #c1c1c1;
+  color: #e8e8e8;
 }
 main.white {
   transition: 1s;
-  background-color: #c1c1c1;
+  background-color: #e8e8e8;
 }
 main.white #part_5_content > div {
   color: #222222 !important;
@@ -553,7 +594,7 @@ main > #main_part_4 > .part_4_box {
   height: 25rem;
   display: flex;
   gap: 0.5rem;
-  color: #c1c1c1;
+  color: #e8e8e8;
 }
 main > #main_part_4 > .part_4_box > .part_4_box_left {
   width: 45%;
@@ -618,7 +659,7 @@ main > #main_part_4 > #part_4_footer > span {
 }
 main > #main_part_4 > #part_4_footer > h3 {
   width: 90%;
-  color: #c1c1c1;
+  color: #e8e8e8;
   font-size: 1.4rem;
   font-weight: 300;
   display: flex;
@@ -672,7 +713,7 @@ main > #main_part_5 > #part_5_content > div {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  color: #c1c1c1;
+  color: #e8e8e8;
   gap: 1rem;
   filter: blur(50px);
   transition: 1s;
@@ -696,7 +737,7 @@ main > #main_part_5 > #part_5_content > div:nth-child(1) > h4 {
   font-weight: 500 !important;
 }
 main > #main_part_5 > #part_5_content > div:nth-child(1) > span {
-  color: #c1c1c1;
+  color: #e8e8e8;
 }
 main > #main_part_6 {
   display: flex;
@@ -719,12 +760,11 @@ main > #main_part_6 > #part_6_banner > h2 {
   color: #222222;
   font-weight: 400;
 }
-
 footer {
   height: 70vh;
   width: 100%;
   background-color: #0c0c0c;
-  color: #c1c1c1;
+  color: #e8e8e8;
   display: flex;
   overflow: hidden;
   flex-direction: column;
@@ -749,6 +789,12 @@ footer > #footer_header {
   padding: 0.5rem;
   font-size: 1.4rem;
 }
+footer > #footer_button {
+  margin-top: 2rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
 footer > #footer_content {
   padding: 0.5rem;
   height: 100%;
@@ -766,7 +812,7 @@ footer > #footer_content > div {
 }
 footer > #footer_footer {
   font-size: 6.2rem;
-  color: #c1c1c1;
+  color: #e8e8e8;
   font-weight: 900;
   display: flex;
   flex-direction: column;
@@ -1008,5 +1054,40 @@ footer > #footer_footer > span {
 @keyframes rotate {
   to {
     transform: rotate(360deg);
+  }
+}
+/* Çizgi Çerçevesi */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  width: 101vw;
+  margin-left: -0.6rem;
+  height: 50px; /* Çizgi yüksekliği */
+  display: flex;
+}
+
+/* Kayan İçerik */
+.marquee-content {
+  display: flex;
+  animation: marquee 10s linear infinite;
+}
+
+/* İki Kopyayı Yan Yana Getirme */
+.marquee-content span {
+  display: inline-block;
+  font-size: 1.1rem;
+}
+.marquee-content span > span {
+  padding: 0 0.5rem;
+}
+
+/* Animasyon */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }/*# sourceMappingURL=style.css.map */

@@ -7,7 +7,7 @@ function qs(query) {
 
 setTimeout(() => {
     qs("#load_page").style.opacity = "0";
-}, 2400);
+}, 2600);
 
 
 

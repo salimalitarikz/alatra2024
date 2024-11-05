@@ -63,33 +63,34 @@ $black:#0c0c0c;
     display: inline-block;
     padding: 1.7rem 4rem;
     // padding-left: 7.2rem;
-    background-color: #ffffff9a;
     border:1px solid $gray_normal;
-    color: $black;
+    color: $gray_light;
     width: fit-content;
     border-radius: .7rem;
     overflow: hidden;
     transition: .7s;
     font-size: .9rem;
     display: flex;
-    font-weight: 600;
+    font-weight: 500;
     @extend .font_2;
     align-items: center;
+    gap: 1rem;
 
-    &::before{
-        content: "";
-        // display: inline-block;
-        display: none;
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background-color: $orange;
-        box-shadow: 0 0 10px $orange, 0 0 10px $orange,0 0 10px $orange,0 0 10px $orange;
-        position: absolute;
-        left: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
+    >span:nth-last-child(1){
+        content: "⇒";
+        width: 4rem;
+        height: 2rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $orange;
+        border-radius: 15px;
+        background-color: $gray_light;
+        box-shadow: 0 0 10px $orange;
         transition: .7s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
     }
 
     &:hover{
@@ -575,7 +576,7 @@ menu{
             >button{
                 height: 90%;
                 aspect-ratio: 1/1;
-                font-size: 1.7rem;
+                font-size: 2.2rem;
                 font-weight: 700;
                 display: flex;
                 align-items: center;
@@ -585,6 +586,8 @@ menu{
                 &:nth-child(1){
                     background-color: transparent;
                     >span{
+                        font-size: 1rem;
+                        font-weight: 400;
                         color: $gray_light;
                         &:nth-child(1){
                             color: $orange;
@@ -596,13 +599,28 @@ menu{
                 }
 
     
-                &:nth-last-child(2){
-                    font-size: 1rem;
+                &:nth-last-child(1){
+                    font-size: 2.2rem;
                     font-weight: 400;
                     display: flex;
                     align-items: center;
                     text-align: center;
                     justify-content: center;
+                    position: relative;
+                    >span{
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 100%;
+                       width: 100%;
+                       line-height: 300%;
+                       text-align: center;
+                        padding-bottom: .4rem;
+
+                    }
                 }
             }
         }
@@ -660,8 +678,12 @@ menu{
                     height: unset;
                     color: $gray_light;
                     font-weight: 300;
-                    font-size: 1rem;
+                    font-size: .8rem;
                     @extend .font_2;
+                    height: 100%;
+                    display: flex;
+                    align-items: flex-end;
+                    padding-bottom: .5rem;
                 }
 
              
@@ -1222,8 +1244,24 @@ main{
         gap: 4rem;
        
 
-        >h1{
-            color: $gray_normal;
+        >div:nth-child(1){
+            display: flex;
+            width: 100%;
+            align-items: flex-end;
+            justify-content: space-between;
+            >h1{
+                color: $gray_normal;
+            }
+
+            >div{
+                overflow: hidden;
+                >span{
+                    display: inline-block;
+                    position: relative;
+                    color: $gray_normal;
+                    animation: scroll_text_an 5s linear infinite;
+                }
+            }
         }
 
         >#part_5_content{
@@ -1332,11 +1370,13 @@ main{
         flex-direction: column;
         gap: 4rem;
         text-align: right;
+        
 
         >#part_6_banner{
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            padding: 10vh 0;
             >h1{
                 font-size: 1.1rem;
                 color: $gray_light;
@@ -1837,6 +1877,7 @@ mix-blend-mode: difference;
 /* Kayan İçerik */
 .marquee-content {
     display: flex;
+    align-items: flex-end;
     animation: marquee 10s linear infinite;
 }
 

@@ -45,9 +45,8 @@
   position: relative;
   display: inline-block;
   padding: 1.7rem 4rem;
-  background-color: rgba(255, 255, 255, 0.6039215686);
   border: 1px solid #8f8f8f;
-  color: #0c0c0c;
+  color: #e8e8e8;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 0.7rem;
@@ -55,22 +54,24 @@
   transition: 0.7s;
   font-size: 0.9rem;
   display: flex;
-  font-weight: 600;
+  font-weight: 500;
   align-items: center;
+  gap: 1rem;
 }
-.button_filled::before {
-  content: "";
-  display: none;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #ff3e00;
-  box-shadow: 0 0 10px #ff3e00, 0 0 10px #ff3e00, 0 0 10px #ff3e00, 0 0 10px #ff3e00;
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+.button_filled > span:nth-last-child(1) {
+  content: "⇒";
+  width: 4rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ff3e00;
+  border-radius: 15px;
+  background-color: #e8e8e8;
+  box-shadow: 0 0 10px #ff3e00;
   transition: 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .button_filled:hover {
   box-shadow: inset 0 0 150px #222222;
@@ -417,7 +418,7 @@ menu > #menu_header > div:nth-last-child(1) {
 menu > #menu_header > div:nth-last-child(1) > button {
   height: 90%;
   aspect-ratio: 1/1;
-  font-size: 1.7rem;
+  font-size: 2.2rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -428,6 +429,8 @@ menu > #menu_header > div:nth-last-child(1) > button:nth-child(1) {
   background-color: transparent;
 }
 menu > #menu_header > div:nth-last-child(1) > button:nth-child(1) > span {
+  font-size: 1rem;
+  font-weight: 400;
   color: #e8e8e8;
 }
 menu > #menu_header > div:nth-last-child(1) > button:nth-child(1) > span:nth-child(1) {
@@ -436,13 +439,27 @@ menu > #menu_header > div:nth-last-child(1) > button:nth-child(1) > span:nth-chi
 menu > #menu_header > div:nth-last-child(1) > button:nth-child(1) > span:nth-child(2) {
   color: #8f8f8f;
 }
-menu > #menu_header > div:nth-last-child(1) > button:nth-last-child(2) {
-  font-size: 1rem;
+menu > #menu_header > div:nth-last-child(1) > button:nth-last-child(1) {
+  font-size: 2.2rem;
   font-weight: 400;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
+  position: relative;
+}
+menu > #menu_header > div:nth-last-child(1) > button:nth-last-child(1) > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 100%;
+  line-height: 300%;
+  text-align: center;
+  padding-bottom: 0.4rem;
 }
 menu > #menu_links {
   width: 100%;
@@ -485,7 +502,11 @@ menu > #menu_links > *:nth-last-child(1) > span:nth-last-child(1) {
   height: unset;
   color: #e8e8e8;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0.5rem;
 }
 menu.menu_active {
   transition: 0.7s;
@@ -804,8 +825,23 @@ main > #main_part_5 {
   flex-direction: column;
   gap: 4rem;
 }
-main > #main_part_5 > h1 {
+main > #main_part_5 > div:nth-child(1) {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+main > #main_part_5 > div:nth-child(1) > h1 {
   color: #8f8f8f;
+}
+main > #main_part_5 > div:nth-child(1) > div {
+  overflow: hidden;
+}
+main > #main_part_5 > div:nth-child(1) > div > span {
+  display: inline-block;
+  position: relative;
+  color: #8f8f8f;
+  animation: scroll_text_an 5s linear infinite;
 }
 main > #main_part_5 > #part_5_content {
   position: relative;
@@ -890,6 +926,7 @@ main > #main_part_6 > #part_6_banner {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 10vh 0;
 }
 main > #main_part_6 > #part_6_banner > h1 {
   font-size: 1.1rem;
@@ -1216,6 +1253,7 @@ footer > #footer_footer > span {
 /* Kayan İçerik */
 .marquee-content {
   display: flex;
+  align-items: flex-end;
   animation: marquee 10s linear infinite;
 }
 

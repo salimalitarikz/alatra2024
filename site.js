@@ -207,7 +207,7 @@ window.addEventListener("scroll", (el) => {
 });
 
 
-function changeLanguage(params) {
+function changeLanguage() {
     var elements = document.querySelectorAll('[data-en]');
 
     for (var i = 0; i < elements.length; i++) {

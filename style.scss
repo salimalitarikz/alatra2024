@@ -505,7 +505,7 @@ menu{
     position: fixed;
     top: 0;
     left: 100%;
-    z-index: 3;
+    z-index: 20;
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -567,19 +567,43 @@ menu{
             }
         }
 
-        >button{
-            height: 90%;
-            aspect-ratio: 1/1;
-            font-size: 1.7rem;
-            font-weight: 700;
+        >div:nth-last-child(1){
             display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 0;
+            height: 100%;
+            gap: 1rem;
 
-            &:nth-last-child(2){
-                font-size: 1.1rem;
-                font-weight: 400;
+            >button{
+                height: 90%;
+                aspect-ratio: 1/1;
+                font-size: 1.7rem;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 0;
+
+                &:nth-child(1){
+                    background-color: transparent;
+                    >span{
+                        color: $gray_light;
+                        &:nth-child(1){
+                            color: $orange;
+                        }
+                        &:nth-child(2){
+                            color: $gray_normal;
+                        }
+                    }
+                }
+
+    
+                &:nth-last-child(2){
+                    font-size: 1rem;
+                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                }
             }
         }
     }

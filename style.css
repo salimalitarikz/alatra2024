@@ -1,7 +1,6 @@
 @charset "UTF-8";
 @import url("fonts/neue-cond/stylesheet.css");
 @import url("fonts/neue/stylesheet.css");
-
 .grained, footer > span, footer, main > #main_part_5 > #part_5_content > #part_5_progress_bar > span, main > #main_part_4 > .part_4_box > .part_4_box_right, main, body > #load_page {
   background-image: url(/ui/grain.png);
 }
@@ -91,11 +90,11 @@
   transition: 0.2s;
 }
 
-.font_2, main > #main_part_5 > #part_5_content > div > h4, main > #main_part_5 > #part_5_content > div, main > #main_part_4 > #part_4_footer > h3, main > #main_part_2 > div > div > p, main > #main_part_2 > div > div > div > div:nth-child(1) > h2, .button_filled {
+.font_2, main > #main_part_5 > #part_5_content > div > h4, main > #main_part_5 > #part_5_content > div, main > #main_part_4 > #part_4_footer > h3, main > #main_part_2 > div > div > p, main > #main_part_2 > div > div > div > div:nth-child(1) > h2, menu > #menu_links > *:nth-last-child(1) > span:nth-last-child(1), .button_filled {
   font-family: "Neue Plak", sans-serif;
 }
 
-.font_3, menu > #menu_footer > div:nth-child(2) > h2, menu > #menu_footer > div:nth-last-child(1) > span, menu > #menu_links > a {
+.font_3, menu > #menu_footer > div:nth-child(2) > h2, menu > #menu_footer > div:nth-last-child(1) > span, menu > #menu_links > * {
   font-family: "Neue Plak Condensed", sans-serif !important;
 }
 
@@ -125,8 +124,8 @@ body > #load_page {
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
   transition: opacity 1s;
-  background-color: rgba(0, 0, 0, 0.7294117647);
-  animation: load_out 3s ease-in-out forwards;
+  background-color: #000000;
+  animation: load_out 3.5s ease-in-out forwards;
   padding-bottom: 20vh;
 }
 @keyframes load_out {
@@ -263,18 +262,6 @@ body:has(.dark) > nav > #menu_button {
   background-color: #e8e8e8;
 }
 body:has(.dark) > nav > #menu_button > span {
-  background-color: #222222;
-}
-body:has(.white) > nav {
-  color: #222222;
-}
-body:has(.white) > nav > #nav_left > h1 {
-  font-weight: 600;
-}
-body:has(.white) > nav > #menu_button {
-  background-color: #e8e8e8;
-}
-body:has(.white) > nav > #menu_button > span {
   background-color: #222222;
 }
 
@@ -464,28 +451,41 @@ menu > #menu_links {
   gap: 1.5rem;
   padding-left: 1rem;
 }
-menu > #menu_links > a {
+menu > #menu_links > * {
   font-size: 2.3rem;
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 0.5rem;
+  position: relative;
 }
-menu > #menu_links > a > span {
+menu > #menu_links > * > span {
   width: 1rem;
   height: 3px;
   border-radius: 1px;
   background-color: #8f8f8f;
 }
-menu > #menu_links > a > span:nth-child(1) {
+menu > #menu_links > * > span:nth-child(1) {
   width: 0.5rem;
 }
-menu > #menu_links > a:nth-child(1) {
+menu > #menu_links > *:nth-child(1) {
   color: #ff3e00;
 }
-menu > #menu_links > a:nth-child(1) > span:nth-child(1) {
+menu > #menu_links > *:nth-child(1) > span:nth-child(1) {
   margin-right: 0.8rem;
+}
+menu > #menu_links > *:nth-last-child(1) {
+  color: #7c7c7c;
+  position: relative;
+}
+menu > #menu_links > *:nth-last-child(1) > span:nth-last-child(1) {
+  background-color: transparent;
+  width: unset;
+  height: unset;
+  color: #e8e8e8;
+  font-weight: 300;
+  font-size: 1rem;
 }
 menu.menu_active {
   transition: 0.7s;
@@ -957,7 +957,7 @@ footer > #footer_content > div {
   gap: 1.5rem;
 }
 footer > #footer_footer {
-  font-size: 6.2rem;
+  font-size: 8rem;
   color: #e8e8e8;
   font-weight: 900;
   display: flex;

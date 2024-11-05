@@ -165,8 +165,8 @@ body{
         z-index: 20;
         backdrop-filter: blur(50px);
         transition: opacity 1s;
-        background-color: #000000ba;
-        animation: load_out 3s ease-in-out forwards;
+        background-color: #000000;
+        animation: load_out 3.5s ease-in-out forwards;
         padding-bottom: 20vh;
         
         @keyframes load_out {
@@ -364,24 +364,24 @@ body{
         }
     }
 
-    &:has(.white){
-        >nav{
-            color: $gray_dark;
-            >#nav_left{
-                >h1{
-                    font-weight: 600;
-                }
-            }
+    // &:has(.white){
+    //     >nav{
+    //         color: $gray_dark;
+    //         >#nav_left{
+    //             >h1{
+    //                 font-weight: 600;
+    //             }
+    //         }
 
-            >#menu_button{
-                background-color: $gray_light;
+    //         >#menu_button{
+    //             background-color: $gray_light;
 
-                >span{
-                    background-color: $gray_dark;
-                }
-            }
-        }
-    }
+    //             >span{
+    //                 background-color: $gray_dark;
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 
@@ -618,7 +618,7 @@ menu{
 
        
         
-        >a{
+        >*{
             @extend .font_3;
             font-size: 2.3rem;
             font-weight: 600;
@@ -626,6 +626,8 @@ menu{
             align-items: center;
             justify-content: flex-start;
             gap: .5rem;
+            position: relative;
+            // width: fit-content;
 
             >span{
                 width: 1rem;
@@ -646,6 +648,23 @@ menu{
                 >span:nth-child(1){
                     margin-right: .8rem;
                 }
+            }
+
+            &:nth-last-child(1){
+                color: #7c7c7c;
+                position: relative;
+
+                >span:nth-last-child(1){
+                    background-color: transparent;
+                    width: unset;
+                    height: unset;
+                    color: $gray_light;
+                    font-weight: 300;
+                    font-size: 1rem;
+                    @extend .font_2;
+                }
+
+             
             }
 
      
@@ -1415,7 +1434,7 @@ footer{
     }
 
     >#footer_footer{
-        font-size: 6.2rem;
+        font-size: 8rem;
         color:$gray_light;
         font-weight: 900;
         display: flex;

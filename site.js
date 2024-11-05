@@ -10,6 +10,24 @@ setTimeout(() => {
 }, 2600);
 
 
+document.querySelectorAll("a").forEach(function(anchor) {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        var target = anchor.getAttribute("href");  // Bağlantının hedef URL'sini al
+        if (target) {
+            qs("#load_page").style.opacity = "1";
+            qs("#load_page").style.display = "flex";
+            qs("#load_page").style.animation = "unset";
+            qs("#menu").style.opacity = "0";
+
+            setTimeout(function(){
+                window.location.href = target;  // 2 saniye sonra yönlendirme
+            }, 2000);  // 2000 ms = 2 saniye gecikme
+        }
+    });
+});
+
+
 
 
 
@@ -214,3 +232,29 @@ function changeLanguage() {
         elements[i].innerHTML = elements[i].dataset.en;
     }
 }
+
+
+
+
+// Orijinal başlığı sakla
+let originalTitle = document.title;
+let interval;
+
+document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+        // Sayfa görünmüyorsa başlığı değiştirecek mesajları ayarla
+        let messages = ["ㅤㅤYapıcı Studio","ㅤ⚡Yapıcı Studio⚡","⚡⚡Yapıcı Studio⚡⚡","ㅤ⚡Yapıcı Studio⚡"];
+        let messageIndex = 0;
+
+        // Başlık arasında geçiş yapmak için bir interval başlat
+        interval = setInterval(function() {
+            document.title = messages[messageIndex];
+            messageIndex = (messageIndex + 1) % messages.length;
+        }, 1000);  // Her bir saniyede başlığı değiştir
+    } else {
+        // Sayfa görünür hale geldiğinde intervali temizle ve orijinal başlığa dön
+        clearInterval(interval);
+        document.title = originalTitle;
+    }
+});
+

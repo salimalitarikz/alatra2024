@@ -1,6 +1,10 @@
 // imports 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/neue-plak');
+
+
+
 //root
 
 $white:#f7f7f7;
@@ -63,7 +67,7 @@ $black:#0c0c0c;
     border:1px solid $gray_normal;
     color: $black;
     width: fit-content;
-    border-radius: 1rem;
+    border-radius: .7rem;
     overflow: hidden;
     transition: .7s;
     font-size: .9rem;
@@ -110,7 +114,8 @@ $black:#0c0c0c;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Outfit", sans-serif;
+    // font-family: "Outfit", sans-serif;
+    font-family: 'Neue Plak', sans-serif;
     transition: .2s;
 }
 
@@ -498,12 +503,35 @@ menu{
     padding: .4rem;
     // glass effect
     // background: rgba(95, 95, 95, 0.5);
+    background-color: #222222cc;
     background-image: url(/ui/grain.png);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 0, 0, 0.25);
     color: $white;
 
+
+    >#menu_decoration{
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // background-image: url(/ui/grain.png);
+        >#menu_dec_globe{
+            position: absolute;
+            right: -20vw;
+            bottom: -20vw;
+            width: 75vw;
+            height: 75vw;
+            border-top-left-radius: 40%;
+            box-shadow: 0 0 100px $orange, 0 0 100px $orange;
+            // filter: blur(5px);
+            background-color: $orange;
+            background-image: url(/ui/grain.png);
+        }
+    }
     
     >#menu_header{
         // padding: .2rem;
@@ -615,14 +643,14 @@ main{
 
     &.white{
         transition: 1s;
-        background-color: $gray_light;
+        background-color: $gray_dark;
 
         
 
        
 
         #part_5_content>div{
-            color: $gray_dark !important;
+            color: $gray_normal !important;
         }
     }
 
@@ -1058,13 +1086,17 @@ main{
                 transition: 1s ease;
                 border-radius: 2px;
                 filter: unset;
+                box-shadow: 0 0 10px $orange;
+                padding-left: 0 !important;
 
                 >span{
-                    display: inline-block;
-                    width: 2.3rem;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 3rem;
                     height: 2rem;
-                    border-top-right-radius: 40%;
-                    border-bottom-right-radius: 40%;
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
                     position: absolute;
                     left: 0;
                     bottom: -1rem;
@@ -1072,13 +1104,16 @@ main{
                     z-index: 2;
                     @extend .grained;
                     box-shadow: 0 0 10px $orange;
+                    padding-left: .5rem;
+
+                
                     
 
                 }
             }
 
             >div{
-                
+                padding-left: .9rem;
                 height: 15vh;
                 // max-height: 10em;
                 width: 100%;
@@ -1087,7 +1122,7 @@ main{
                 align-items: center;
                 color: $gray_light;
                 gap: 1rem;
-                filter: blur(50px);
+                // filter: blur(30px);
                 transition: 1s;
 
                 >span{
@@ -1096,15 +1131,20 @@ main{
 
                 &.active{
                     filter: unset;
+                    >h4{
+                        filter: blur(0);
+                    }
                 }
 
                 @extend .font_2;
 
                 >h4{
+                    transition: 1s;
                     font-size: .9rem;
                     font-weight: 300;
                     @extend .font_2;
                     padding-left: .5rem;
+                    filter: blur(10px);
                 }
 
                 &:nth-child(1){
@@ -1114,6 +1154,7 @@ main{
 
                     >h4{
                         font-weight: 500 !important;
+                        filter: unset;
                     }
 
                     >span{
@@ -1140,20 +1181,20 @@ main{
             gap: 2rem;
             >h1{
                 font-size: 1.1rem;
-                color: $gray_normal;
+                color: $gray_light;
                 font-weight: 600;
             } 
     
             >h2{
                 font-size: 1.1rem;
-                color: $gray_dark;
-                font-weight: 400;
+                color: $gray_light;
+                font-weight: 300;            
             }
         }
 
         >#part_6_content{
-            
-
+            font-weight: 300;
+            color: $gray_light;
         }
         
         

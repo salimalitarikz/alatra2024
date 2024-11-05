@@ -29,7 +29,8 @@ setTimeout(() => {
 
 
 
-const snapValues = [3700,3800,3900,4000,4100,4200]; // Birden fazla snap noktası
+// const snapValues = [3700,3800,3900,4000,4100,4200]; // Birden fazla snap noktası
+const snapValues = [3700]; // Birden fazla snap noktası
 const scrollPause = 500; // Duraklama süresi (ms)
 let isPaused = false; // Duraklama kontrolü
 let hasSnapped = Array(snapValues.length).fill(false); // Her snap için kontrol dizisi   

@@ -1,7 +1,7 @@
-// imports 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import url("fonts/neue/stylesheet.css");
+// // imports 
+// @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("fonts/neue-cond/stylesheet.css");
 
 
 
@@ -105,9 +105,6 @@ $black:#0c0c0c;
     }
 }
 
-.font_2{
-    font-family: "Albert Sans", sans-serif;
-}
 
 
 *{
@@ -116,7 +113,17 @@ $black:#0c0c0c;
     box-sizing: border-box;
     // font-family: "Outfit", sans-serif;
     font-family: 'Neue Plak', sans-serif;
+
     transition: .2s;
+}
+
+.font_2{
+    // font-family: "Albert Sans", sans-serif;
+    font-family: 'Neue Plak', sans-serif;
+}
+
+.font_3{
+    font-family: 'Neue Plak Condensed', sans-serif !important;
 }
 
 html{
@@ -156,8 +163,9 @@ body{
         flex-direction: column;
         gap: 2rem;
         z-index: 20;
-        backdrop-filter: blur(100px);
+        backdrop-filter: blur(50px);
         transition: opacity 1s;
+        background-color: #000000ba;
         animation: load_out 3s ease-in-out forwards;
         padding-bottom: 20vh;
         
@@ -194,9 +202,11 @@ body{
             font-size: 2rem;
 
             >div{
-                height: 1em;
+                height: 1.1em;
                 overflow: hidden;
                 animation: load_name_an_1 2.4s linear forwards;
+                color: $gray_light;
+                font-weight: 400;
                 
                 // transition-delay: .2s;
                 @keyframes load_name_an_1 {
@@ -242,8 +252,8 @@ body{
 
             }
             h4{
-                font-weight: 400;
-
+                font-weight: 500;
+                color: $orange;
                 animation: load_slogan_an_2 2.4s linear forwards;
                 @keyframes load_slogan_an_2 {
                     25%{opacity: 1;transform: translateX(0);}
@@ -518,16 +528,19 @@ menu{
         position: absolute;
         top: 0;
         left: 0;
+        overflow: hidden;
         // background-image: url(/ui/grain.png);
         >#menu_dec_globe{
             position: absolute;
-            right: -20vw;
-            bottom: -20vw;
-            width: 75vw;
-            height: 75vw;
-            border-top-left-radius: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -30vw;
+            width: 120vw;
+            height: 120vw;
+            border-radius: 50%;
+            opacity: .1;
             box-shadow: 0 0 100px $orange, 0 0 100px $orange;
-            // filter: blur(5px);
+            filter: blur(55px);
             background-color: $orange;
             background-image: url(/ui/grain.png);
         }
@@ -575,17 +588,119 @@ menu{
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
+        padding-left: 1rem;
 
+
+       
+        
         >a{
-            font-size: 1.2rem;
+            @extend .font_3;
+            font-size: 2.3rem;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: .5rem;
+
+            >span{
+                width: 1rem;
+                height: 3px;
+                border-radius: 1px;
+                background-color: $gray_normal;
+
+                &:nth-child(1){
+                    width: .5rem ;
+                }
+
+            }
+
+
+            &:nth-child(1){
+                color: $orange;
+
+                >span:nth-child(1){
+                    margin-right: .8rem;
+                }
+            }
+
+     
         }
     }
 
     &.menu_active{
         transition: .7s;
         left: 0%;
+    }
+
+    >#menu_footer{
+        height: 120vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap:1rem;
+
+        >div{
+            height: 45%;
+            // border: 1px solid $orange;
+            padding: 0 3rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            &:nth-last-child(1){
+                height: 10%;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                padding: 0;
+                >span{
+                    @extend .font_3;
+                    font-size: 1.1rem;
+                    color: #b7b7b7;
+
+                    >span{
+                        // background-color: $orange;
+                        border-radius: 50%;
+                        font-size: .9rem;
+                    }
+                }
+            }
+
+            &:nth-child(2){
+                justify-content: center;
+
+                >h2{
+                    @extend .font_3;
+                    font-size: 2.5rem;
+                    color: #ffffff;
+                    opacity: .5;
+                }
+                >div{
+                    width: 100%;
+                    // border: 1px solid $black;
+                    height: 2rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1.2rem;
+                    margin-top: 1rem;
+                    
+                    >a{
+                        font-size: 1.7rem;
+                        color: #b7b7b7;
+                    }
+                }
+            }
+            >p{
+               
+                font-size: .8rem;
+                font-weight: 500;
+                color: #b7b7b7;
+            }
+
+        }
     }
 }
 

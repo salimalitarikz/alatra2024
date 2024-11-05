@@ -18,8 +18,8 @@ function menuToggle() {
     let main = document.getElementById("main");
 
     menu.classList.toggle("menu_active");
-    main.classList.toggle("main_disabled");
-    qs("#body").classList.toggle("dark");
+    // main.classList.toggle("main_disabled");
+    // qs("#body").classList.toggle("dark");
 }
 
 

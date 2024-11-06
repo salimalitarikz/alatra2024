@@ -106,7 +106,6 @@ html {
 body {
   background-color: #e8e8e8;
   background-image: url(/ui/grain.png);
-  min-height: 250vh;
   position: relative;
   overflow-x: hidden;
 }
@@ -361,7 +360,7 @@ menu {
   z-index: 20;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
   transition: 0.5s ease;
   padding: 0.4rem;
   background-color: rgba(34, 34, 34, 0.8);
@@ -486,10 +485,10 @@ menu > #menu_links > * > span {
 menu > #menu_links > * > span:nth-child(1) {
   width: 0.5rem;
 }
-menu > #menu_links > *:nth-child(1) {
+menu > #menu_links > *.menu_link_active {
   color: #ff3e00;
 }
-menu > #menu_links > *:nth-child(1) > span:nth-child(1) {
+menu > #menu_links > *.menu_link_active > span:nth-child(1) {
   margin-right: 0.8rem;
 }
 menu > #menu_links > *:nth-last-child(1) {
@@ -941,6 +940,10 @@ main > #main_part_6 > #part_6_banner > h2 {
 main > #main_part_6 > #part_6_content {
   font-weight: 300;
   color: #e8e8e8;
+}
+
+#about_main {
+  height: 60vh;
 }
 
 footer {

@@ -134,7 +134,6 @@ html{
 body{
     background-color: $gray_light;
     background-image: url(/ui/grain.png);
-    min-height: 250vh;
     position: relative;
     overflow-x: hidden;
     // transition: 1s;
@@ -286,64 +285,6 @@ body{
 
     
 
-    // &.dark{
-    //     transition: 1s;
-    //     background-color: $gray_dark;
-
-    //     *{
-    //         // color: $gray_light;
-    //     }
-        
-
-    //     >nav{
-    //         color: $gray_light;
-    //         >#nav_left{
-    //             >h1{
-    //                 font-weight: 600;
-    //             }
-    //         }
-
-    //         >#menu_button{
-    //             background-color: $gray_light;
-
-    //             >span{
-    //                 background-color: $gray_dark;
-    //             }
-    //         }
-    //     }
-
-    //     #main_part_2,#main_part_3{
-    //         color: $gray_light;
-    //     }
-    // }
-
-    // &.white{
-    //     transition: 1s;
-    //     background-color: $gray_light;
-
-        
-
-    //     >nav{
-    //         color: $gray_light;
-    //         >#nav_left{
-    //             >h1{
-    //                 font-weight: 600;
-    //             }
-    //         }
-
-    //         >#menu_button{
-    //             background-color: $gray_light;
-
-    //             >span{
-    //                 background-color: $gray_dark;
-    //             }
-    //         }
-    //     }
-
-    //     #part_5_content>div{
-    //         color: $gray_dark !important;
-    //     }
-    // }
 
     
     &:has(.dark){
@@ -509,7 +450,7 @@ menu{
     z-index: 20;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
     transition: .5s ease;
     padding: .4rem;
     // glass effect
@@ -660,7 +601,7 @@ menu{
             }
 
 
-            &:nth-child(1){
+            &.menu_link_active{
                 color: $orange;
 
                 >span:nth-child(1){
@@ -1399,7 +1340,9 @@ main{
     }
 }
 
-
+#about_main{
+    height: 60vh;
+}
 
 footer{
     // margin-top: 20vh;

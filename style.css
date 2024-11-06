@@ -252,6 +252,13 @@ body > #load_page > #load_slogan h4 > span:nth-child(3) {
 body > #load_page > #load_slogan h4 > span:nth-child(4) {
   animation-delay: 1.4s;
 }
+body > #load_page.load_before {
+  display: flex !important;
+  opacity: 1 !important;
+}
+body > #load_page.load_before > * {
+  opacity: 0;
+}
 body:has(.dark) > nav {
   color: #e8e8e8;
 }

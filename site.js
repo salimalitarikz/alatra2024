@@ -15,14 +15,12 @@ document.querySelectorAll("a").forEach(function(anchor) {
         e.preventDefault();
         var target = anchor.getAttribute("href");  // Bağlantının hedef URL'sini al
         if (target) {
-            qs("#load_page").style.opacity = "1";
-            qs("#load_page").style.display = "flex";
-            qs("#load_page").style.animation = "unset";
+            qs("#load_page").classList.add("load_before");
             qs("#menu").style.opacity = "0";
 
             setTimeout(function(){
                 window.location.href = target;  // 2 saniye sonra yönlendirme
-            }, 2000);  // 2000 ms = 2 saniye gecikme
+            }, 300);  // 2000 ms = 2 saniye gecikme
         }
     });
 });

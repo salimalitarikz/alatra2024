@@ -279,6 +279,16 @@ body{
         }
 
 
+        &.load_before{
+            display: flex !important;
+            opacity: 1 !important;
+
+            >*{
+                opacity: 0;
+            }
+        }
+
+
         
     }
 

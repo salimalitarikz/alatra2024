@@ -241,7 +241,7 @@ let interval;
 document.addEventListener("visibilitychange", function() {
     if (document.hidden) {
         // Sayfa görünmüyorsa başlığı değiştirecek mesajları ayarla
-        let messages = ["ㅤㅤYapıcı Studio","ㅤ⚡Yapıcı Studio⚡","⚡⚡Yapıcı Studio⚡⚡","ㅤ⚡Yapıcı Studio⚡"];
+        let messages = ["Tam & Kaliteli İş İçin","Alitra Studio"];
         let messageIndex = 0;
 
         // Başlık arasında geçiş yapmak için bir interval başlat

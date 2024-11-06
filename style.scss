@@ -1850,81 +1850,47 @@ mix-blend-mode: difference;
 
 
 
-$phi: 1.6180339887498948482;
-$base-diameter: 80vmin; // Ekrana göre ölçeklenen temel çember boyutu
+$cirle-width: 90vw;
 
-:root {
-  // Her çember için dinamik çap değişkenleri
-  @for $i from 2 through 9 {
-    $j: $i - 1;
-    --diameter-#{$i}: #{$base-diameter / pow($phi, $j)};
-  }
+* {
+  box-sizing: border-box;
 }
-
+html, body {
+  height: 100%;
+  margin: 0;
+}
 .wrap {
-  height: $base-diameter;
-  width: $base-diameter;
-  position: relative;
+//   background-color: #1d1d1d;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  .circle {
-    box-sizing: border-box;
-    border: 0.4vmin solid #fff; // Çizgi kalınlığı ekran boyutuna göre ölçeklenir
-    border-radius: 50%;
+.loader {
+  position: relative;  
+  width: $cirle-width;
+  height: $cirle-width;
+  border: 1.5px solid $orange;
+  border-radius: 50%;
+  position: relative;   
+  animation: spin-outer 5s linear infinite;
+  & > & {
+    width: 61.8047%;
+    height: 61.8047%;
     position: absolute;
-    box-shadow: inset 0 0 100px #00000041;
-    @extend .grained;
-
-    &-1 {
-      height: $base-diameter;
-      width: $base-diameter;
-      animation: spin 8s linear infinite; // En dış çember yavaşça dönüyor
-    }
-
-    // İç çemberlerin her birinin animasyonu ve boyutlandırması
-    @for $i from 2 through 9 {
-      $j: $i - 1;
-      $radius: $base-diameter / pow($phi, $j) / 2;
-      $timing: 8s * (1 / $j); // Zamanı Fibonacci dizisine göre ayarlama
-
-      &-#{$i} {
-        height: var(--diameter-#{$i});
-        width: var(--diameter-#{$i});
-        top: calc(50% - #{$radius});
-        left: calc(50% - #{$radius});
-        animation: rot-#{$i} #{$timing} infinite linear;
-      }
-    }
+    bottom: -1px;
+    left: 50%;
+    transform: translatex(-50%); 
+    animation: spin-inner 5s linear infinite;
   }
 }
 
-// Keyframes tanımlamaları (rotasyon ve çember yerleşimi)
-@for $i from 2 through 9 {
-  $j: $i - 2;
-  $k: $i - 1;
-  $diameter-big: $base-diameter / pow($phi, $j);
-  $diameter-small: $base-diameter / pow($phi, $k);
-  $test: ($diameter-big - $diameter-small) / 2;
-  $keyframe-name: rot-#{$i};
-
-  @keyframes #{$keyframe-name} {
-    from {
-      transform: rotate(0deg) translate(#{$test}) rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg) translate(#{$test}) rotate(-360deg);
-    }
-  }
+@keyframes spin-outer {
+    0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
-
-// Ana rotasyon animasyonu (en dış çember)
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes spin-inner {
+    0% { transform: translatex(-50%) rotate(0deg); }
+  100% { transform: translatex(-50%) rotate(360deg); }
 }

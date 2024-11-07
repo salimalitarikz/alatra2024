@@ -105,7 +105,6 @@ html {
 
 body {
   background-color: #e8e8e8;
-  background-image: url(/ui/grain.png);
   position: relative;
   overflow-x: hidden;
 }
@@ -950,7 +949,7 @@ main > #main_part_6 > #part_6_content {
 }
 
 #about_main {
-  margin-top: 20vh;
+  padding-top: 20vh;
 }
 #about_main > .about_part {
   position: relative;
@@ -1316,15 +1315,6 @@ footer > #footer_footer > span {
     transform: translateX(-50%);
   }
 }
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
 .wrap {
   color: #fff;
   display: flex;

@@ -135,7 +135,7 @@ html{
 
 body{
     background-color: $gray_light;
-    background-image: url(/ui/grain.png);
+    // background-image: url(/ui/grain.png);
     position: relative;
     overflow-x: hidden;
     // transition: 1s;
@@ -1353,7 +1353,7 @@ main{
 }
 
 #about_main{
-    margin-top: 20vh;
+    padding-top: 20vh;
     
 
     >.about_part{
@@ -1852,13 +1852,6 @@ mix-blend-mode: difference;
 
 $cirle-width: 90vw;
 
-* {
-  box-sizing: border-box;
-}
-html, body {
-  height: 100%;
-  margin: 0;
-}
 .wrap {
 //   background-color: #1d1d1d;
   color: #fff;
@@ -1875,6 +1868,7 @@ html, body {
   border-radius: 50%;
   position: relative;   
   animation: spin-outer 5s linear infinite;
+//   box-shadow: 0 0 200px #9a9a9a93;
   & > & {
     width: 61.8047%;
     height: 61.8047%;

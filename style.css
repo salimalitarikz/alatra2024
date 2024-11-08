@@ -1034,7 +1034,7 @@ footer > #footer_content > div {
   gap: 1.5rem;
 }
 footer > #footer_footer {
-  font-size: 8rem;
+  font-size: 25vw;
   color: #e8e8e8;
   font-weight: 900;
   display: flex;
@@ -1329,7 +1329,7 @@ footer > #footer_footer > span {
   border: 1.5px solid #ff3e00;
   border-radius: 50%;
   position: relative;
-  animation: spin-outer 5s linear infinite;
+  animation: spin-outer 4s linear infinite;
 }
 .loader > .loader {
   width: 61.8047%;
@@ -1338,7 +1338,7 @@ footer > #footer_footer > span {
   bottom: -1px;
   left: 50%;
   transform: translatex(-50%);
-  animation: spin-inner 5s linear infinite;
+  animation: spin-inner 4s linear infinite;
 }
 
 @keyframes spin-outer {

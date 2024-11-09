@@ -418,8 +418,8 @@ nav{
         background-image: url(/ui/grain.png);
         background-color: $gray_dark;
         border: 1px solid $gray_normal;
-        height: 90%;
-        aspect-ratio: 1.2/1;
+        height: 3rem;
+        aspect-ratio: 1/1;
         position: absolute;
         right: 0;
         display: flex;
@@ -463,7 +463,7 @@ menu{
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    transition: .5s ease;
+    transition: .5s allow-discrete;
     padding: .4rem;
     // glass effect
     // background: rgba(95, 95, 95, 0.5);
@@ -473,6 +473,7 @@ menu{
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 0, 0, 0.25);
     color: $white;
+    opacity: 0;
 
 
     >#menu_decoration{
@@ -507,17 +508,22 @@ menu{
         align-items: center;
         justify-content: space-between;
         position: relative;
-        top: .5rem;
+        top: .6rem;
 
         >div{
 
             >h1{
-                font-size: 1.3rem;
+                
+                font-size: 1.5rem;
                 font-weight: 600;
             }
             >span{
                 font-size: .9rem;
                 font-weight: 300;
+            }
+
+            &:nth-child(1){
+                margin-left: .4rem;
             }
         }
 
@@ -527,7 +533,7 @@ menu{
             gap: 1rem;
 
             >button{
-                height: 90%;
+                height: 3rem;
                 aspect-ratio: 1/1;
                 font-size: 2.2rem;
                 font-weight: 700;
@@ -647,8 +653,24 @@ menu{
     }
 
     &.menu_active{
-        transition: .7s;
-        left: 0%;
+        // transition: .5s;
+        // left: 0%;
+
+        animation: menu_activation .5s linear forwards;
+        @keyframes menu_activation {
+            0%{
+                opacity: 0;
+            }
+            1%{
+                opacity: 0;
+                left: 0%;
+            }
+            100%{
+                opacity: 1;
+                left: 0%;
+            }
+            
+        }
     }
 
     >#menu_footer{

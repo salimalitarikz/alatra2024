@@ -330,8 +330,8 @@ nav > #menu_button {
   background-image: url(/ui/grain.png);
   background-color: #222222;
   border: 1px solid #8f8f8f;
-  height: 90%;
-  aspect-ratio: 1.2/1;
+  height: 3rem;
+  aspect-ratio: 1/1;
   position: absolute;
   right: 0;
   display: flex;
@@ -367,7 +367,7 @@ menu {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  transition: 0.5s ease;
+  transition: 0.5s allow-discrete;
   padding: 0.4rem;
   background-color: rgba(34, 34, 34, 0.8);
   background-image: url(/ui/grain.png);
@@ -375,6 +375,7 @@ menu {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 0, 0, 0.25);
   color: #f7f7f7;
+  opacity: 0;
 }
 menu > #menu_decoration {
   width: 100%;
@@ -405,15 +406,18 @@ menu > #menu_header {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  top: 0.5rem;
+  top: 0.6rem;
 }
 menu > #menu_header > div > h1 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
 }
 menu > #menu_header > div > span {
   font-size: 0.9rem;
   font-weight: 300;
+}
+menu > #menu_header > div:nth-child(1) {
+  margin-left: 0.4rem;
 }
 menu > #menu_header > div:nth-last-child(1) {
   display: flex;
@@ -421,7 +425,7 @@ menu > #menu_header > div:nth-last-child(1) {
   gap: 1rem;
 }
 menu > #menu_header > div:nth-last-child(1) > button {
-  height: 90%;
+  height: 3rem;
   aspect-ratio: 1/1;
   font-size: 2.2rem;
   font-weight: 700;
@@ -514,8 +518,20 @@ menu > #menu_links > *:nth-last-child(1) > span:nth-last-child(1) {
   padding-bottom: 0.5rem;
 }
 menu.menu_active {
-  transition: 0.7s;
-  left: 0%;
+  animation: menu_activation 0.5s linear forwards;
+}
+@keyframes menu_activation {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+    left: 0%;
+  }
+  100% {
+    opacity: 1;
+    left: 0%;
+  }
 }
 menu > #menu_footer {
   height: 120vw;

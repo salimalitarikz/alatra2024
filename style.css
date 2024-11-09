@@ -330,7 +330,7 @@ nav > #menu_button {
   background-image: url(/ui/grain.png);
   background-color: #222222;
   border: 1px solid #8f8f8f;
-  height: 3rem;
+  height: 3.6rem;
   aspect-ratio: 1/1;
   position: absolute;
   right: 0;
@@ -425,7 +425,7 @@ menu > #menu_header > div:nth-last-child(1) {
   gap: 1rem;
 }
 menu > #menu_header > div:nth-last-child(1) > button {
-  height: 3rem;
+  height: 3.6rem;
   aspect-ratio: 1/1;
   font-size: 2.2rem;
   font-weight: 700;
@@ -538,11 +538,10 @@ menu > #menu_footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
 }
 menu > #menu_footer > div {
   height: 45%;
-  padding: 0 3rem;
+  padding: 0 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;

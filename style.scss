@@ -418,7 +418,7 @@ nav{
         background-image: url(/ui/grain.png);
         background-color: $gray_dark;
         border: 1px solid $gray_normal;
-        height: 3rem;
+        height: 3.6rem;
         aspect-ratio: 1/1;
         position: absolute;
         right: 0;
@@ -533,7 +533,7 @@ menu{
             gap: 1rem;
 
             >button{
-                height: 3rem;
+                height: 3.6rem;
                 aspect-ratio: 1/1;
                 font-size: 2.2rem;
                 font-weight: 700;
@@ -678,12 +678,11 @@ menu{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap:1rem;
 
         >div{
             height: 45%;
             // border: 1px solid $orange;
-            padding: 0 3rem;
+            padding: 0 1rem;
             text-align: center;
             display: flex;
             flex-direction: column;

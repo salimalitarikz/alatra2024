@@ -256,3 +256,8 @@ document.addEventListener("visibilitychange", function() {
     }
 });
 
+
+
+// Mevcut sayfanın URL'sini değiştirmek, fakat tarayıcı geçmişini etkilemeden
+let yeniUrl = window.location.pathname.replace('.html', '');
+history.replaceState({}, '', yeniUrl);

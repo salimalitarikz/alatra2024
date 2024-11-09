@@ -1054,6 +1054,55 @@ main > #main_part_6 > #part_6_content {
   font-weight: 600;
 }
 
+body:has(#services_main) {
+  background-color: #141414;
+}
+body:has(#services_main) nav {
+  color: #e8e8e8;
+}
+body:has(#services_main) footer {
+  background-color: transparent !important;
+}
+
+#services_main {
+  min-height: 200vh;
+  background-color: transparent;
+  padding: 15vh 1rem;
+  color: #e8e8e8;
+}
+#services_main > #services_part_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20vh;
+}
+#services_main > #services_part_1 > #services_part_1_header {
+  padding: 0 1rem;
+}
+#services_main > #services_part_1 > #services_part_1_header > h1 {
+  font-size: 1.7rem;
+  text-align: center;
+  color: #e8e8e8;
+  font-weight: 500;
+}
+#services_main > #services_part_1 > #services_part_1_content {
+  display: flex;
+  flex-direction: column;
+}
+#services_main > #services_part_1 > #services_part_1_content > h2, #services_main > #services_part_1 > #services_part_1_content > h3 {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5294117647);
+}
+#services_main > #services_part_1 > #services_part_1_content > h2 {
+  padding-left: 0.5rem;
+  margin-top: 2rem;
+  font-weight: 500;
+}
+#services_main > #services_part_1 > #services_part_1_content > h3 {
+  padding-left: 1.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
 .wrap {
   color: #fff;
   display: flex;

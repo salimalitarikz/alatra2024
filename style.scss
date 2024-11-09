@@ -1502,6 +1502,69 @@ main{
 }
 
 
+body:has(#services_main){
+    background-color: #141414;
+
+    nav{
+        color: $gray_light;
+    }
+
+    footer{
+        background-color: transparent !important;
+    }
+}
+
+#services_main{
+    min-height: 200vh;
+    background-color: transparent;
+    padding: 15vh 1rem;
+    color: $gray_light;
+
+    >#services_part_1{
+        display: flex;
+        flex-direction: column;
+        gap: 20vh;
+
+        >#services_part_1_header{
+           padding: 0 1rem;
+
+            >h1{
+                font-size: 1.7rem;
+                text-align: center;
+                color: $gray_light;
+                font-weight: 500;
+            }
+        }
+
+        >#services_part_1_content{
+            display: flex;
+            flex-direction: column;
+            // gap: .5rem;
+
+            >h2,>h3{
+                padding: 1rem 0;
+                border-bottom: 1px solid #ffffff87;
+            }
+
+            >h2{
+                padding-left: .5rem;
+                margin-top: 2rem;
+                font-weight: 500;
+            }
+
+            >h3{
+                padding-left: 1.5rem;
+                font-weight: 400;
+                font-size: 1rem;
+            }
+        }
+
+
+    }
+    
+}
+
+
 /// PERFECTION
 
 

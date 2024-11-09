@@ -1389,15 +1389,15 @@ main{
         height: 80vh;
         >#about_part_1_header{
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                align-items: flex-start;
+                justify-content: flex-start;
             >h1{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+                // display: flex;
+                // flex-direction: column;
+                // align-items: center;
+                // justify-content: center;
                 text-align: center;
-                font-size: 1.8rem;
+                font-size: 2rem;
                 font-weight: 600;
 
                 >span{
@@ -1408,13 +1408,60 @@ main{
 
         >.wrap{
             position: absolute;
-            top: 30vh;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 25vh;
         }
     }
 
 
 }
-    // bigness of golden ratio circles
+
+
+/// PERFECTION
+
+
+$cirle-width: 95vw;
+
+.wrap {
+//   background-color: #1d1d1d;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  position: relative;  
+  width: $cirle-width;
+  height: $cirle-width;
+  border: 1.5px solid $orange;
+  border-radius: 50%;
+  position: relative;   
+  animation: spin-outer 4s linear infinite;
+//   box-shadow: 0 0 200px #9a9a9a93;
+  & > & {
+    width: 61.8047%;
+    height: 61.8047%;
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translatex(-50%); 
+    animation: spin-inner 4s linear infinite;
+  }
+}
+
+@keyframes spin-outer {
+    0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes spin-inner {
+    0% { transform: translatex(-50%) rotate(0deg); }
+  100% { transform: translatex(-50%) rotate(360deg); }
+}
+
+
+
 
 footer{
     // margin-top: 20vh;
@@ -1863,49 +1910,3 @@ mix-blend-mode: difference;
 }
 
 
-
-/// PERFECTION
-/// 
-
-
-
-
-
-$cirle-width: 90vw;
-
-.wrap {
-//   background-color: #1d1d1d;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.loader {
-  position: relative;  
-  width: $cirle-width;
-  height: $cirle-width;
-  border: 1.5px solid $orange;
-  border-radius: 50%;
-  position: relative;   
-  animation: spin-outer 4s linear infinite;
-//   box-shadow: 0 0 200px #9a9a9a93;
-  & > & {
-    width: 61.8047%;
-    height: 61.8047%;
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-    transform: translatex(-50%); 
-    animation: spin-inner 4s linear infinite;
-  }
-}
-
-@keyframes spin-outer {
-    0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-@keyframes spin-inner {
-    0% { transform: translatex(-50%) rotate(0deg); }
-  100% { transform: translatex(-50%) rotate(360deg); }
-}

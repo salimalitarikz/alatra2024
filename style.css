@@ -978,16 +978,12 @@ main > #main_part_6 > #part_6_content {
 }
 #about_main > #about_part_1 > #about_part_1_header {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 #about_main > #about_part_1 > #about_part_1_header > h1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 #about_main > #about_part_1 > #about_part_1_header > h1 > span {
@@ -995,9 +991,53 @@ main > #main_part_6 > #part_6_content {
 }
 #about_main > #about_part_1 > .wrap {
   position: absolute;
-  top: 30vh;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 25vh;
 }
 
+.wrap {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  position: relative;
+  width: 95vw;
+  height: 95vw;
+  border: 1.5px solid #ff3e00;
+  border-radius: 50%;
+  position: relative;
+  animation: spin-outer 4s linear infinite;
+}
+.loader > .loader {
+  width: 61.8047%;
+  height: 61.8047%;
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translatex(-50%);
+  animation: spin-inner 4s linear infinite;
+}
+
+@keyframes spin-outer {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin-inner {
+  0% {
+    transform: translatex(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translatex(-50%) rotate(360deg);
+  }
+}
 footer {
   height: 70vh;
   width: 100%;
@@ -1327,47 +1367,5 @@ footer > #footer_footer > span {
   }
   to {
     transform: translateX(-50%);
-  }
-}
-.wrap {
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.loader {
-  position: relative;
-  width: 90vw;
-  height: 90vw;
-  border: 1.5px solid #ff3e00;
-  border-radius: 50%;
-  position: relative;
-  animation: spin-outer 4s linear infinite;
-}
-.loader > .loader {
-  width: 61.8047%;
-  height: 61.8047%;
-  position: absolute;
-  bottom: -1px;
-  left: 50%;
-  transform: translatex(-50%);
-  animation: spin-inner 4s linear infinite;
-}
-
-@keyframes spin-outer {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spin-inner {
-  0% {
-    transform: translatex(-50%) rotate(0deg);
-  }
-  100% {
-    transform: translatex(-50%) rotate(360deg);
   }
 }/*# sourceMappingURL=style.css.map */

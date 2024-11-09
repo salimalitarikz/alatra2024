@@ -518,7 +518,7 @@ menu > #menu_links > *:nth-last-child(1) > span:nth-last-child(1) {
   padding-bottom: 0.5rem;
 }
 menu.menu_active {
-  animation: menu_activation 0.5s linear forwards;
+  animation: menu_activation 0.2s linear forwards;
 }
 @keyframes menu_activation {
   0% {
@@ -1084,7 +1084,6 @@ footer > #footer_footer > span {
   background-image: var(--stripes), var(--rainbow);
   background-size: 300%, 200%;
   background-position: 50% 50%, 50% 50%;
-  filter: invert(100%);
   -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 30%, transparent 70%);
           mask-image: radial-gradient(ellipse at 100% 0%, black 30%, transparent 70%);
   pointer-events: none;

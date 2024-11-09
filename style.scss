@@ -656,7 +656,7 @@ menu{
         // transition: .5s;
         // left: 0%;
 
-        animation: menu_activation .5s linear forwards;
+        animation: menu_activation .2s linear forwards;
         @keyframes menu_activation {
             0%{
                 opacity: 0;
@@ -1534,7 +1534,7 @@ footer{
     background-image: var(--stripes), var(--rainbow);
     background-size: 300%, 200%;
     background-position: 50% 50%, 50% 50%;
-    filter: invert(100%);
+    // filter: invert(100%);
     mask-image: radial-gradient(ellipse at 100% 0%, black 30%, transparent 70%);
     pointer-events: none;
     opacity: .3;

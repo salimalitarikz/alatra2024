@@ -10,7 +10,7 @@ setTimeout(() => {
 }, 2600);
 
 
-document.querySelectorAll("a").forEach(function(anchor) {
+document.querySelectorAll(".page_link").forEach(function(anchor) {
     anchor.addEventListener("click", function(e) {
         e.preventDefault();
         var target = anchor.getAttribute("href");  // Bağlantının hedef URL'sini al
@@ -234,27 +234,27 @@ function changeLanguage() {
 
 
 
-// Orijinal başlığı sakla
-let originalTitle = document.title;
-let interval;
+// // Orijinal başlığı sakla
+// let originalTitle = document.title;
+// let interval;
 
-document.addEventListener("visibilitychange", function() {
-    if (document.hidden) {
-        // Sayfa görünmüyorsa başlığı değiştirecek mesajları ayarla
-        let messages = ["Tam & Kaliteli İş İçin","Alitra Studio"];
-        let messageIndex = 0;
+// document.addEventListener("visibilitychange", function() {
+//     if (document.hidden) {
+//         // Sayfa görünmüyorsa başlığı değiştirecek mesajları ayarla
+//         let messages = ["Tam & Kaliteli İş İçin","Alitra Studio"];
+//         let messageIndex = 0;
 
-        // Başlık arasında geçiş yapmak için bir interval başlat
-        interval = setInterval(function() {
-            document.title = messages[messageIndex];
-            messageIndex = (messageIndex + 1) % messages.length;
-        }, 1000);  // Her bir saniyede başlığı değiştir
-    } else {
-        // Sayfa görünür hale geldiğinde intervali temizle ve orijinal başlığa dön
-        clearInterval(interval);
-        document.title = originalTitle;
-    }
-});
+//         // Başlık arasında geçiş yapmak için bir interval başlat
+//         interval = setInterval(function() {
+//             document.title = messages[messageIndex];
+//             messageIndex = (messageIndex + 1) % messages.length;
+//         }, 5000);  // Her bir saniyede başlığı değiştir
+//     } else {
+//         // Sayfa görünür hale geldiğinde intervali temizle ve orijinal başlığa dön
+//         clearInterval(interval);
+//         document.title = originalTitle;
+//     }
+// });
 
 
 

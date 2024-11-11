@@ -1177,7 +1177,7 @@ body:has(#services_main) footer {
   color: #e8e8e8;
   opacity: 1;
   position: absolute;
-  top: 15vh;
+  top: 25vh;
 }
 #project_form > #proj_form_part_1 > span {
   display: inline-block;
@@ -1215,7 +1215,7 @@ body:has(#services_main) footer {
   color: #e8e8e8;
   opacity: 1;
   position: absolute;
-  top: 15vh;
+  top: 20vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -1289,7 +1289,7 @@ body:has(#services_main) footer {
   animation: proj_form_text_an 0.4s linear forwards;
 }
 #project_form.proj_active.proj_phase_2 > #proj_form_part_2 > #proj_form_part_2_content > div {
-  transition: opacity 0.3s, filter 0.5s;
+  transition: opacity 0.3s, filter 0.9s;
   opacity: 1;
   filter: blur(0px);
 }

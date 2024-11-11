@@ -1659,7 +1659,7 @@ body:has(#services_main){
         color: $gray_light;
         opacity: 1;
         position: absolute;
-        top: 15vh;
+        top: 25vh;
 
         >span{
             display: inline-block;
@@ -1686,7 +1686,7 @@ body:has(#services_main){
         color: $gray_light;
         opacity: 1;
         position: absolute;
-        top: 15vh;
+        top: 20vh;
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -1771,7 +1771,7 @@ body:has(#services_main){
                         &:nth-child(6){transition-delay: 3.5s;}
                         &:nth-child(7){transition-delay: 3.8s;}
 
-                        transition:opacity .3s, filter .5s;
+                        transition:opacity .3s, filter .9s;
                         opacity: 1;
                         filter: blur(0px);
                     }

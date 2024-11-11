@@ -64,8 +64,8 @@
         <div id="menu_links">
             <a class="" href="/index.html" data-en="<span></span> <span></span> HOME"><span></span> <span></span> Anasayfa </a>
             <a class="" href="/about.html" data-en="<span></span> <span></span> ABOUT"><span></span> <span></span> Hakkımızda </a>
-            <a class="menu_link_active" href="/services.html" data-en="<span></span> <span></span> SERVICES"><span></span> <span></span> Servislerimiz</a>
-            <a href="/contact.html" data-en="<span></span> <span></span> CONTACT"><span></span> <span></span> İletişim</a>
+            <a class="" href="/services.html" data-en="<span></span> <span></span> SERVICES"><span></span> <span></span> Servislerimiz</a>
+            <a class="menu_link_active" href="/contact.html" data-en="<span></span> <span></span> CONTACT"><span></span> <span></span> İletişim</a>
             <h3 data-en="<span></span> <span></span> CUSTOMER PANEL  <span>coming soon</span>"><span></span> <span></span> Müşteri Paneli <span>çok yakında</span></h3>
            
         </div>
@@ -125,13 +125,66 @@
             <a></a>
 
 
-            <a id="footer_button" class="button_filled" data-en="START PROJECT"><span>Veya Proje Başlatın</span> <span><ion-icon name="arrow-forward-outline"></ion-icon></span></a>
+            <button onclick="projectStartToggle()" id="footer_button" class="button_filled" data-en="START PROJECT"><span>Veya Proje Başlatın</span> <span><ion-icon name="arrow-forward-outline"></ion-icon></span></a>
         </div>
         
       </section>
         
 
     </main>
+
+
+
+     <!-- Make sure you don't change the form action-->
+     <form id="project_form" action="https://api.staticforms.xyz/submit" method="post">
+        <div id="proj_form_part_1">
+            <span>Merhabalar,</span> <br> 
+            <span>sizinle&nbsp;</span>
+            <span>çalışacağımız </span> <br>
+            <span>için&nbsp;</span>
+            <span>çok&nbsp;</span>
+            <span>heyecanlandık !</span>
+        </div>
+
+        <div id="proj_form_part_2">
+            <div id="proj_form_part_2_header">
+                <span>Size&nbsp;</span>
+                <span>hangi&nbsp;</span>
+                <span>konuda</span> <br>
+                <span>yardımcı&nbsp;</span>
+                <span>olmamızı&nbsp;</span>
+                <span>istersiniz&nbsp; </span>
+                <span>?</span>
+            </div>
+
+            <div id="proj_form_part_2_content">
+                <div onclick="form_select_job('website')">Websitesi yaptırmak istiyorum</div>
+                <div onclick="form_select_job('branding')">Marka gücümü artırmak istiyorum</div>
+                <div onclick="form_select_job('e-commerce')">İnternetten satış yapmak istiyorum</div>
+                <div onclick="form_select_job('social-media')">Sosyal medyada önce çıkmak istiyorum</div>
+                <div onclick="form_select_job('print')">Baskı işlerim için tasarım yaptırmak istiyorum</div>
+            </div>
+
+
+        </div>
+
+        <div onclick="projectStartToggle()" id="proj_form_close"><ion-icon name="close-outline"></ion-icon></div>
+        <!-- Replace with accesKey sent to your email -->
+        <input type="hidden" name="accessKey" value="ed4d0f4a-92d3-44d2-b5b1-d58d816a830f"> <!-- Required -->
+        <input type="text" name="name"> <!-- Optional -->
+        <input type="text" name="subject"> <!-- Optional -->
+        <input type="text" name="email"> <!-- Optional -->
+        <input type="text" name="phone"> <!-- Optional -->
+        <textarea name="message"></textarea> <!-- Optional -->
+        <!-- If you want replyTo to be set to specific email -->
+        <input type="text" name="replyTo" value="hello@alitra.net"> <!-- Optional -->
+        <!-- Specify @ as reply to value if you want it to be customers email -->
+        <input type="hidden" name="replyTo" value="@"> <!-- Optional -->
+        <!-- If you want form to redirect to a specific url after submission -->
+        <!-- <input type="hidden" name="redirectTo" value="https://example.com/contact/success"> Optional -->
+        <input type="submit" value="Submit" />
+    </form>
+    
 
 
   

@@ -26,6 +26,12 @@ document.querySelectorAll(".page_link").forEach(function(anchor) {
 });
 
 
+function projectStartToggle(){
+    qs("#project_form").classList.toggle("proj_active");
+    setTimeout(() => {
+        qs("#project_form").classList.add("proj_phase_2");
+    }, 3500);
+}
 
 
 

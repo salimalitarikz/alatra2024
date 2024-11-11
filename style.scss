@@ -2306,4 +2306,30 @@ mix-blend-mode: difference;
     }
 }
 
+#desktop_no_header{
+    display: none;
+}
 
+@media only screen and (min-width: 800px) {
+    body {
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        >*{
+            display: none;
+
+            
+        }
+
+        #desktop_no_header{
+            display: block;
+            font-size: 2rem;
+            // color: $black;
+         text-align: center;
+            // transform: translateX(-50%);
+            // opacity: 1;
+            // filter: none;
+        }
+    }
+  }

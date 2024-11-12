@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("fonts/neue-cond/stylesheet.css");
 @import url("fonts/helvetica/stylesheet.css");
-.grained, footer > span, footer, #project_form, main > #main_part_5 > #part_5_content > #part_5_progress_bar > span, main > #main_part_4 > .part_4_box > .part_4_box_right, main, body > #load_page, canvas {
+.grained, footer > span, footer, #project_form, main > #main_part_5 > #part_5_content > #part_5_progress_bar > span, main > #main_part_4 > .part_4_box > .part_4_box_right, main, body > #load_page {
   background-image: url(/ui/grain.png);
 }
 
@@ -85,24 +85,6 @@
   box-shadow: 0 0 10px #ff3e00, 0 0 10px #ff3e00;
   width: 20px;
   border-radius: 2px;
-}
-
-.wrapper {
-  height: 2000px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30%;
-  height: 30%;
-  opacity: 1;
-  z-index: -1;
 }
 
 * {
@@ -1502,7 +1484,6 @@ footer > #footer_footer > span {
 }
 
 #globe_wrapper {
-  display: none;
   width: 100vw;
   height: 100vh;
   position: absolute;

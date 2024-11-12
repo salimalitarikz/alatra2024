@@ -114,24 +114,25 @@ $black:#0c0c0c;
     }
 }
 
-.wrapper{
-    height: 2000px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
+// #container{
+//     height: 2000px;
+//     width: 100%;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+// }
 
-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30%;
-    height: 30%;
-    opacity: 1;
-    z-index: -1;
-    @extend .grained;
-}
+// canvas {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 30%;
+//     height: 30%;
+//     opacity: 1;
+//     z-index: -1;
+//     // @extend .grained;
+//     mask-image: linear-gradient(black,transparent);
+// }
 
 
 *{
@@ -2021,7 +2022,7 @@ mix-blend-mode: difference;
 
 
 #globe_wrapper{
-    display: none;
+    // display: none;
     width: 100vw;
     height: 100vh;
     position: absolute;
